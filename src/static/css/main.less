@@ -1,0 +1,85 @@
+/* ==========================================================================
+   cfpb-email-templates
+   ========================================================================== */
+
+// This is your project's main Less file.
+// Project-specific Less rules go after the imports.
+
+// Import Normalize, a Capital Framework dependency and an all-around best practice.
+@import (less) "../../vendor/normalize-css/normalize.css";
+@import (less) "../../vendor/normalize-legacy-addon/normalize-legacy-addon.css";
+
+// Import the combined Capital Framework component file that was created by `grunt compile-cf`.
+@import (less) "capital-framework.less";
+
+// Import the brand color palette.
+@import (less) "brand-palette.less";
+
+// Override the Capital Framework theme variables with colors from the brand color palette.
+@import (less) "cf-theme-overrides.less";
+
+body,
+.body {
+    background: @white;
+}
+
+table {
+    width: 100%;
+    font-family: "Avenir Next", Arial, sans-serif;
+}
+
+// Override CF defaults
+th,
+td {
+    background: transparent;
+}
+tbody > tr:nth-child(2n+1) {
+    > th,
+    > td {
+        background: transparent;
+    }
+}
+
+.wrapper {
+    width: 580px;
+    margin: 0 auto;
+    background: @white;
+
+    th,
+    td {
+        padding: 30px 10px;
+    }
+}
+
+.header {
+    border-bottom: 1px solid @gray-50;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.logo {
+    width: 237px;
+}
+
+.logo__header {
+    text-align: right;
+}
+
+.footer {
+    background: @gray-10;
+    border-top: 3px solid @green;
+}
+
+.footer td {
+    padding-right: 30px;
+    padding-left: 30px;
+    font-size: 0.75em;
+}
+
+a[href^="tel"] {
+    border-bottom: none;
+    color: @black;
+    font-weight: 500;
+}
