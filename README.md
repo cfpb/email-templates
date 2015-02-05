@@ -14,12 +14,13 @@
 
 ----
 
-# Project Title
+# Responsive Email Templates
 
-**Description**:  Put a meaningful, short, plain-language description of what
-this project is trying to accomplish and why it matters. 
-Describe the problem(s) this project solves.
-Describe how this software can improve the lives of its audience.
+**Description**:  All our interactions with the public (anyone outside the bureau, including other federal or state agencies, institutions and consummers) should be easy to understand and use regardless of the communication channel (website, printed pamphlets, reports, our consumer response hotline and email). Currently our email communications have not been given the same consideration as some of our other channels of communication.
+
+This project aims to provide a technical framework, templates and a content strategy for external communication via email.
+
+Content guidelines will be hosted in the [Design Manual](https://cfpb.github.io/design-manual/index.html).
 
 Other things to include:
 
