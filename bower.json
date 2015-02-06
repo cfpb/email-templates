@@ -15,21 +15,12 @@
   "license": "CC0",
   "dependencies": {
     "cf-buttons": "*",
-    "cf-icons": "*",
     "cf-typography": "~0.7.0"
   },
   "exportsOverride": {
     "cf-*": {
       "css": "src/**/*.css",
-      "less": "src/**/*.less",
-      "fonts": "src/fonts/*.*",
-      "js": "src/**/*.js"
-    },
-    "box-sizing-polyfill": {
-      "js": "boxsizing.htc"
-    },
-    "html5shiv": {
-      "js": "dist/html5shiv-printshiv.min.js"
+      "less": "src/**/*.less"
     }
   }
 }

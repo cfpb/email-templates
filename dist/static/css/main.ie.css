@@ -6496,8 +6496,13 @@ figure img {
 /* cf-typography
    ========================================================================== */
 
+/* ==========================================================================
+   Email template styles begin here
+   ========================================================================== */
+
 body,
 .body {
+  margin-bottom: 0;
   background: #ffffff;
 }
 
@@ -6508,6 +6513,7 @@ table {
 
 th,
 td {
+  padding: 0;
   background: transparent;
 }
 
@@ -6517,35 +6523,54 @@ tbody > tr:nth-child(2n+1) > td {
 }
 
 .wrapper {
-  width: 580px;
+  max-width: 600px;
   margin: 0 auto;
   background: #ffffff;
 }
 
 .wrapper th,
 .wrapper td {
-  padding: 30px 10px;
+  padding: 30px 15px;
 }
 
-.header {
+td.header,
+td.footer {
+  padding: 0;
   border-bottom: 1px solid #babbbd;
 }
 
-.header p {
+td.header table,
+td.footer table,
+td.header p,
+td.footer p {
   margin-bottom: 0;
 }
 
+td.header img,
+td.footer img {
+  display: block;
+}
+
 .logo {
-  width: 237px;
+  width: 267px;
 }
 
-.logo__header {
-  text-align: right;
+.intro {
+  width: 333px;
 }
 
-.footer {
+.main a {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+tr.footer-row {
   background: #f1f2f2;
+}
+
+td.footer {
   border-top: 3px solid #2cb34a;
+  border-bottom: none;
 }
 
 .footer td {
@@ -6554,8 +6579,20 @@ tbody > tr:nth-child(2n+1) > td {
   font-size: 0.75em;
 }
 
+.address {
+  width: 283px;
+}
+
+.address td {
+  padding-top: 40px;
+}
+
 a[href^="tel"] {
   border-bottom: none;
   color: #101820;
   font-weight: 500;
+}
+
+td.single-cell-fix {
+  padding: 0;
 }

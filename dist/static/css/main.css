@@ -5911,8 +5911,12 @@ figure img {
    ========================================================================== */
 /* cf-typography
    ========================================================================== */
+/* ==========================================================================
+   Email template styles begin here
+   ========================================================================== */
 body,
 .body {
+  margin-bottom: 0;
   background: #ffffff;
 }
 table {
@@ -5921,6 +5925,7 @@ table {
 }
 th,
 td {
+  padding: 0;
   background: transparent;
 }
 tbody > tr:nth-child(2n+1) > th,
@@ -5928,37 +5933,97 @@ tbody > tr:nth-child(2n+1) > td {
   background: transparent;
 }
 .wrapper {
-  width: 580px;
+  max-width: 600px;
   margin: 0 auto;
   background: #ffffff;
 }
 .wrapper th,
 .wrapper td {
-  padding: 30px 10px;
+  padding: 30px 15px;
 }
-.header {
+td.header,
+td.footer {
+  padding: 0;
   border-bottom: 1px solid #babbbd;
 }
-.header p {
+td.header table,
+td.footer table,
+td.header p,
+td.footer p {
   margin-bottom: 0;
 }
+td.header img,
+td.footer img {
+  display: block;
+}
 .logo {
-  width: 237px;
+  width: 267px;
 }
-.logo__header {
-  text-align: right;
+.intro {
+  width: 333px;
 }
-.footer {
+.main a {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+tr.footer-row {
   background: #f1f2f2;
+}
+td.footer {
   border-top: 3px solid #2cb34a;
+  border-bottom: none;
 }
 .footer td {
   padding-right: 30px;
   padding-left: 30px;
   font-size: 0.75em;
 }
+.address {
+  width: 283px;
+}
+.address td {
+  padding-top: 40px;
+}
 a[href^="tel"] {
   border-bottom: none;
   color: #101820;
   font-weight: 500;
+}
+@media only all and (max-width: 30em) {
+  .logo,
+  .intro,
+  .address {
+    display: block !important;
+    width: 100% !important;
+  }
+  .logo img {
+    height: 40px;
+  }
+  .logo__header td {
+    width: 100% !important;
+    padding: 10px;
+    border-bottom: 1px solid #e3e4e5;
+  }
+  .logo__header img {
+    margin: 0 auto;
+  }
+  .footer td {
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 1em;
+  }
+  .logo__footer td {
+    padding-bottom: 15px;
+  }
+  .address td {
+    padding-top: 0;
+  }
+}
+td.single-cell-fix {
+  padding: 0;
+}
+@media only all and (max-width: 30em) {
+  td.single-cell-fix {
+    padding: 0 0 0 1px;
+  }
 }

@@ -3,20 +3,2761 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width"/>
+  <!-- viewport breaks HTML rendering on BB7 -->
+  <!-- <meta name="viewport" content="width=device-width" /> -->
 
-  <link rel="stylesheet" href="/static/css/main.css"> <!-- For testing only -->
+  <!-- <link rel="stylesheet" href="../dist/static/css/main.css" /> For testing only -->
 
-  <style type="text/css">
-   
-    /* Ink styles go here in production */
-   
-  </style>
-  <style type="text/css">
+  <style type="text/css" data-style-block="cf">
+/* ==========================================================================
+   cfpb-email-templates
+   ========================================================================== */
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0;
+}
 
-    /* Your custom styles go here */
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold;
+}
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic;
+}
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000;
+}
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0;
+}
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto;
+}
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+/*! normalize-legacy-addon | MIT License | https://github.com/cfpb/normalize-legacy-addon */
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/* 
+ * Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
+ * `em` units.
+*/
+html {
+  font-size: 100%;
+}
+/*
+ * Addresses `font-family` inconsistency between `textarea` and other form
+ * elements.
+ */
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Addresses font sizes and margins set differently in IE 6/7.
+ * Addresses font sizes within `section` and `article` in Firefox 4+, Safari 5,
+ * and Chrome.
+ */
+h1 {
+  margin: 0.67em 0;
+}
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+h6 {
+  font-size: 0.75em;
+  margin: 2.33em 0;
+}
+blockquote {
+  margin: 1em 40px;
+}
+/*
+ * Addresses margins set differently in IE 6/7.
+ */
+p,
+pre {
+  margin: 1em 0;
+}
+/*
+ * Corrects font family set oddly in IE 6, Safari 4/5, and Chrome.
+ */
+code,
+kbd,
+pre,
+samp {
+  _font-family: 'courier new', monospace;
+}
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre;
+  word-wrap: break-word;
+}
+/*
+ * Addresses CSS quotes not supported in IE 6/7.
+ */
+q {
+  quotes: none;
+}
+/*
+ * Addresses `quotes` property not supported in Safari 4.
+ */
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+/* ==========================================================================
+   Lists
+   ========================================================================== */
+/*
+ * Addresses margins set differently in IE 6/7.
+ */
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0;
+}
+dd {
+  margin: 0 0 0 40px;
+}
+/*
+ * Addresses paddings set differently in IE 6/7.
+ */
+menu,
+ol,
+ul {
+  padding: 0 0 0 40px;
+}
+/*
+ * Corrects list images handled incorrectly in IE 7.
+ */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * Improves image quality when scaled in IE 7.
+ */
+img {
+  -ms-interpolation-mode: bicubic;
+}
 
-  </style>
+/* ==========================================================================
+   Capital Framework
+   Button Styling
+   ========================================================================== */
+/* topdoc
+    name: Theme variables
+    family: cf-buttons
+    notes:
+      - "The following color and sizing variables are exposed, allowing you to
+         easily override them before compiling."
+    patterns:
+    - name: Colors
+      codenotes:
+        - |
+          @btn-text
+          @btn-bg
+          @btn-bg-hover
+          @btn-bg-active
+          @btn__secondary-text
+          @btn__secondary-bg
+          @btn__secondary-bg-hover
+          @btn__secondary-bg-active
+          @btn__warning-text
+          @btn__warning-bg
+          @btn__warning-bg-hover
+          @btn__warning-bg-active
+          @btn__disabled-text
+          @btn__disabled-bg
+          @btn__disabled-outline
+    - name: Sizing
+      codenotes:
+        - |
+          @btn-font-size
+          @btn-v-padding
+          @btn-v-padding-modifier-ie
+          @super-btn-font-size
+      notes:
+        - "@btn-v-padding-modifier-ie is used to fix the vertical padding bug in
+           IE for <button>'s and <inputs>'s across various .btn styles.
+           We should revisit this after adding normalize.css to see if this is
+           still needed."
+    tags:
+    - cf-buttons
+    - less
+*/
+/* topdoc
+    name: Default button
+    family: cf-buttons
+    notes:
+      - "Note that the .visited, .hover, .focus, .active classes are for
+         demonstration purposes only and should not be used in production."
+    patterns:
+    - name: Default state
+      markup: |
+        <a href="#" class="btn">Anchor Tag</a>
+        <button class="btn">Button Tag</button>
+        <input type="submit" value="Input Tag" class="btn">
+    - name: Hovered state
+      markup: |
+        <a href="#" class="btn hover">Anchor Tag</a>
+        <button class="btn hover">Button Tag</button>
+        <input type="submit" value="Input Tag" class="btn hover">
+    - name: Focused state
+      markup: |
+        <a href="#" class="btn focus">Anchor Tag</a>
+        <button class="btn focus">Button Tag</button>
+        <input type="submit" value="Input Tag" class="btn focus">
+    - name: Active state
+      markup: |
+        <a href="#" class="btn active">Anchor Tag</a>
+        <button class="btn active">Button Tag</button>
+        <input type="submit" value="Input Tag" class="btn active">
+    tags:
+    - cf-buttons
+*/
+.btn {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0.57142857em 1em;
+  border: 0;
+  border-radius: 0.28571429em;
+  margin: 0;
+  vertical-align: middle;
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875em;
+  line-height: normal;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .1s;
+  -webkit-appearance: none;
+}
+.btn,
+.btn:link,
+.btn:visited {
+  background-color: #0072ce;
+  color: #ffffff;
+}
+.btn:hover,
+.btn.hover {
+  background-color: #328ed8;
+}
+.btn:focus,
+.btn.focus {
+  background-color: #328ed8;
+  outline: 1px dotted #0072ce;
+  outline-offset: 1px;
+}
+.btn:active,
+.btn.active {
+  background-color: #33578e;
+}
+button.btn::-moz-focus-inner,
+input.btn::-moz-focus-inner {
+  border: 0;
+}
+.btn + .btn {
+  margin-left: 0.42857143em;
+}
+/* topdoc
+    name: Secondary button
+    family: cf-buttons
+    notes:
+      - "Note that the .visited, .hover, .focus, .active classes are for
+         demonstration purposes only and should not be used in production."
+    patterns:
+    - name: Default state
+      markup: |
+        <a href="#" class="btn btn__secondary">Anchor Tag</a>
+        <button class="btn btn__secondary">Button Tag</button>
+        <input type="submit" value="Input Tag" class="btn btn__secondary">
+    - name: Hovered state
+      markup: |
+        <a href="#" class="btn btn__secondary hover">Anchor Tag</a>
+        <button class="btn btn__secondary hover">Button Tag</button>
+        <input type="submit" value="Input Tag" class="btn btn__secondary hover">
+    - name: Focused state
+      markup: |
+        <a href="#" class="btn btn__secondary focus">Anchor Tag</a>
+        <button class="btn btn__secondary focus">Button Tag</button>
+        <input type="submit" value="Input Tag" class="btn btn__secondary focus">
+    - name: Active state
+      markup: |
+        <a href="#" class="btn btn__secondary active">Anchor Tag</a>
+        <button class="btn btn__secondary active">Button Tag</button>
+        <input type="submit" value="Input Tag" class="btn btn__secondary active">
+    tags:
+    - cf-buttons
+*/
+.btn__secondary,
+.btn__secondary:link,
+.btn__secondary:visited {
+  background-color: #75787b;
+  color: #ffffff;
+}
+.btn__secondary:hover,
+.btn__secondary.hover {
+  background-color: #919395;
+}
+.btn__secondary:focus,
+.btn__secondary.focus {
+  background-color: #919395;
+  outline-color: #75787b;
+}
+.btn__secondary:active,
+.btn__secondary.active {
+  background-color: #43484e;
+}
+/* topdoc
+    name: Destructive action button
+    family: cf-buttons
+    notes:
+      - "Note that the .visited, .hover, .focus, .active classes are for
+         demonstration purposes only and should not be used in production."
+    patterns:
+    - name: Default state
+      markup: |
+        <a href="#" class="btn btn__warning">Anchor Tag</a>
+        <button class="btn btn__warning">Button Tag</button>
+        <input type="submit" value="Input Tag" class="btn btn__warning">
+    - name: Hovered state
+      markup: |
+        <a href="#" class="btn btn__warning hover">Anchor Tag</a>
+        <button class="btn btn__warning hover">Button Tag</button>
+        <input type="submit" value="Input Tag" class="btn btn__warning hover">
+    - name: Focused state
+      markup: |
+        <a href="#" class="btn btn__warning focus">Anchor Tag</a>
+        <button class="btn btn__warning focus">Button Tag</button>
+        <input type="submit" value="Input Tag" class="btn btn__warning focus">
+    - name: Active state
+      markup: |
+        <a href="#" class="btn btn__warning active">Anchor Tag</a>
+        <button class="btn btn__warning active">Button Tag</button>
+        <input type="submit" value="Input Tag" class="btn btn__warning active">
+    tags:
+    - cf-buttons
+*/
+.btn__warning,
+.btn__warning:link,
+.btn__warning:visited {
+  background-color: #d12124;
+  color: #ffffff;
+}
+.btn__warning:hover,
+.btn__warning.hover {
+  background-color: #da6750;
+}
+.btn__warning:focus,
+.btn__warning.focus {
+  background-color: #da6750;
+  outline-color: #d12124;
+}
+.btn__warning:active,
+.btn__warning.active {
+  background-color: #9c301b;
+}
+/* topdoc
+    name: Disabled button
+    family: cf-buttons
+    notes:
+      - "Disabled buttons do not contain separate hover and active states since
+         they should not be interacted with."
+      - "Note that the .focus class is for demonstration purposes only and
+         should not be used in production."
+    patterns:
+    - name: Default/hovered/active state
+      markup: |
+        <a href="#" class="btn btn__disabled">Anchor Tag</a>
+        <button class="btn btn__disabled">Button Tag</button>
+        <input type="submit" value="Input Tag" class="btn btn__disabled">
+    - name: Focused state
+      markup: |
+        <a href="#" class="btn btn__disabled focus">Anchor Tag</a>
+        <button class="btn btn__disabled focus">Button Tag</button>
+        <input type="submit" value="Input Tag" class="btn btn__disabled focus">
+    tags:
+    - cf-buttons
+*/
+.btn__disabled,
+.btn__disabled:link,
+.btn__disabled:visited,
+.btn__disabled:hover,
+.btn__disabled.hover,
+.btn__disabled:focus,
+.btn__disabled.focus,
+.btn__disabled:active,
+.btn__disabled.active {
+  background-color: #e3e4e5;
+  color: #75787b;
+  cursor: default;
+  cursor: not-allowed;
+}
+.btn__disabled:focus,
+.btn__disabled.focus {
+  outline-color: #e3e4e5;
+}
+/* topdoc
+    name: Super button
+    family: cf-buttons
+    patterns:
+    - name: Default state
+      markup: |
+        <a href="#" class="btn btn__super">Anchor Tag</a>
+        <button class="btn btn__super">Button Tag</button>
+        <input type="submit" value="Input Tag" class="btn btn__super">
+    - name: Hovered state
+      markup: |
+        <a href="#" class="btn btn__super hover">Anchor Tag</a>
+        <button class="btn btn__super hover">Button Tag</button>
+        <input type="submit" value="Input Tag" class="btn btn__super hover">
+    - name: Focused state
+      markup: |
+        <a href="#" class="btn btn__super focus">Anchor Tag</a>
+        <button class="btn btn__super focus">Button Tag</button>
+        <input type="submit" value="Input Tag" class="btn btn__super focus">
+    - name: Active state
+      markup: |
+        <a href="#" class="btn btn__super active">Anchor Tag</a>
+        <button class="btn btn__super active">Button Tag</button>
+        <input type="submit" value="Input Tag" class="btn btn__super active">
+    tags:
+    - cf-buttons
+*/
+.btn__super {
+  padding: 0.61111111em 1.61111111em;
+  font-size: 1.125em;
+}
+.btn__super + .btn__super {
+  margin-left: 0.33333333em;
+}
+
+/* topdoc
+    name: Button group modifiers
+    family: cf-buttons
+    patterns:
+    - name: Default buttons in a button group
+      markup: |
+        <a href="#" class="btn btn__grouped-first">Anchor 1</a>
+        <a href="#" class="btn btn__grouped">Anchor 2</a>
+        <a href="#" class="btn btn__grouped-last">Anchor 3</a>
+        <br>
+        <br>
+        <button class="btn btn__grouped-first">Button 1</button>
+        <button class="btn btn__grouped">Button 2</button>
+        <button class="btn btn__grouped-last">Button 3</button>
+        <br>
+        <br>
+        <input type="button" value="Input 1" class="btn btn__grouped-first">
+        <input type="button" value="Input 2" class="btn btn__grouped">
+        <input type="button" value="Input 3" class="btn btn__grouped-last">
+    - name: Super buttons in a button group
+      markup: |
+        <a href="#" class="btn btn__grouped-first btn__super">Anchor 1</a>
+        <a href="#" class="btn btn__grouped btn__super">Anchor 2</a>
+        <a href="#" class="btn btn__grouped-last btn__super">Anchor 3</a>
+        <br>
+        <br>
+        <button class="btn btn__grouped-first btn__super">Button 1</button>
+        <button class="btn btn__grouped btn__super">Button 2</button>
+        <button class="btn btn__grouped-last btn__super">Button 3</button>
+        <br>
+        <br>
+        <input type="button" value="Input 1" class="btn btn__grouped-first btn__super">
+        <input type="button" value="Input 2" class="btn btn__grouped btn__super">
+        <input type="button" value="Input 3" class="btn btn__grouped-last btn__super">
+    tags:
+    - cf-buttons
+*/
+.btn__grouped {
+  border-radius: 0;
+}
+.btn__grouped-first {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn__grouped-last {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn__grouped-first + .btn__grouped,
+.btn__grouped-first + .btn__grouped-last,
+.btn__grouped,
+.btn__grouped + .btn__grouped,
+.btn__grouped-last,
+.btn__grouped + .btn__grouped-last {
+  margin-left: -0.21428571em;
+}
+.btn__grouped-first.btn__super + .btn__grouped.btn__super,
+.btn__grouped-first.btn__super + .btn__grouped-last.btn__super,
+.btn__grouped.btn__super,
+.btn__grouped-last.btn__super,
+.btn__grouped.btn__super + .btn__grouped.btn__super,
+.btn__grouped.btn__super + .btn__grouped-last.btn__super {
+  margin-left: -0.16666667em;
+}
+/* topdoc
+    name: Compound button
+    family: cf-buttons
+    notes:
+      - "This pattern requires combining .btn__grouped modifiers with
+         the .btn__compound-action modifier."
+      - "Note that the .visited, .hover, .focus, .active classes are for
+         demonstration purposes only and should not be used in production."
+    patterns:
+    - name: All button styles
+      markup: |
+        <a href="#" class="btn btn__grouped-first">Anchor</a>
+        <a href="#" class="btn btn__grouped-last btn__compound-action">
+            <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+        </a>
+        <br>
+        <br>
+        <button class="btn btn__grouped-first">Button</button>
+        <button class="btn btn__grouped-last btn__compound-action">
+            <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+        </button>
+        <br>
+        <br>
+        <a href="#" class="btn btn__grouped-first btn__secondary">Anchor</a>
+        <a href="#" class="btn btn__grouped-last btn__secondary btn__compound-action">
+            <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+        </a>
+        <br>
+        <br>
+        <button class="btn btn__grouped-first btn__secondary">Button</button>
+        <button class="btn btn__grouped-last btn__secondary btn__compound-action">
+            <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+        </button>
+        <br>
+        <br>
+        <a href="#" class="btn btn__grouped-first btn__warning">Anchor</a>
+        <a href="#" class="btn btn__grouped-last btn__warning btn__compound-action">
+            <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+        </a>
+        <br>
+        <br>
+        <button class="btn btn__grouped-first btn__warning">Button</button>
+        <button class="btn btn__grouped-last btn__warning btn__compound-action">
+            <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+        </button>
+        <br>
+        <br>
+        <a href="#" class="btn btn__grouped-first btn__disabled">Anchor</a>
+        <a href="#" class="btn btn__grouped-last btn__disabled btn__compound-action">
+            <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+        </a>
+        <br>
+        <br>
+        <button class="btn btn__grouped-first btn__disabled">Button</button>
+        <button class="btn btn__grouped-last btn__disabled btn__compound-action">
+            <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+        </button>
+        <br>
+        <br>
+        <a href="#" class="btn btn__grouped-first btn__super">Anchor</a>
+        <a href="#" class="btn btn__grouped-last btn__super btn__compound-action">
+            <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+        </a>
+        <br>
+        <br>
+        <button class="btn btn__grouped-first btn__super">Button</button>
+        <button class="btn btn__grouped-last btn__super btn__compound-action">
+            <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+        </button>
+    tags:
+    - cf-buttons
+    - fj-icons
+*/
+.btn__compound-action,
+.btn__compound-action:link,
+.btn__compound-action:visited {
+  background-color: #328ed8;
+}
+.btn__compound-action:hover,
+.btn__compound-action:focus,
+.btn__compound-action.hover {
+  background-color: #0072ce;
+}
+.btn__compound-action.btn__secondary {
+  background-color: #919395;
+}
+.btn__compound-action.btn__secondary:hover,
+.btn__compound-action.btn__secondary:focus,
+.btn__compound-action.btn__secondary.hover {
+  background-color: #75787b;
+}
+.btn__compound-action.btn__warning {
+  background-color: #da6750;
+}
+.btn__compound-action.btn__warning:hover,
+.btn__compound-action.btn__warning:focus,
+.btn__compound-action.btn__warning.hover {
+  background-color: #d12124;
+}
+.btn__compound-action.btn__disabled,
+.btn__compound-action.btn__disabled:hover,
+.btn__compound-action.btn__disabled:focus,
+.btn__compound-action.btn__disabled.hover {
+  background-color: #e3e4e5;
+}
+.btn__compound-action.btn__super {
+  padding-left: 1.22222222em;
+  padding-right: 1.22222222em;
+}
+/* topdoc
+    name: Button link
+    family: cf-buttons
+    notes:
+      - "Note that the .visited, .hover, .focus, .active classes are for
+         demonstration purposes only and should not be used in production."
+    patterns:
+    - name: Default state
+      markup: |
+        <a href="#" class="btn btn__link">Anchor Tag</a>
+        <button class="btn btn__link">Button Tag</button>
+        <input type="button" value="Input Tag" class="btn btn__link">
+    - name: Hovered state
+      markup: |
+        <a href="#" class="btn btn__link hover">Anchor Tag</a>
+        <button class="btn btn__link hover">Button Tag</button>
+        <input type="button" value="Input Tag" class="btn btn__link hover">
+    - name: Focused state
+      markup: |
+        <a href="#" class="btn btn__link focus">Anchor Tag</a>
+        <button class="btn btn__link focus">Button Tag</button>
+        <input type="button" value="Input Tag" class="btn btn__link focus">
+    - name: Active state
+      markup: |
+        <a href="#" class="btn btn__link active">Anchor Tag</a>
+        <button class="btn btn__link active">Button Tag</button>
+        <input type="button" value="Input Tag" class="btn btn__link active">
+    tags:
+    - cf-buttons
+*/
+.btn__link {
+  padding: 0;
+  border-bottom: 1px dotted #0072ce;
+  border-radius: 0;
+  margin: 0.57142857em 0;
+}
+.btn__link,
+.btn__link:link,
+.btn__link:visited {
+  border-bottom-color: #0072ce;
+  background-color: transparent;
+  color: #0072ce;
+}
+.btn__link:hover,
+.btn__link.hover {
+  border-bottom: 1px solid #328ed8;
+  background-color: transparent;
+  color: #328ed8;
+}
+.btn__link:focus,
+.btn__link.focus {
+  border-bottom-style: solid;
+  background-color: transparent;
+  outline: thin dotted #0072ce;
+}
+.btn__link:active,
+.btn__link.active {
+  border-bottom: 1px solid #33578e;
+  background-color: transparent;
+  color: #33578e;
+}
+/* topdoc
+    name: Secondary button link
+    family: cf-buttons
+    notes:
+      - "Note that the .visited, .hover, .focus, .active classes are for
+         demonstration purposes only and should not be used in production."
+    patterns:
+    - name: Default state
+      markup: |
+        <a href="#" class="btn btn__link btn__secondary">Anchor Tag</a>
+        <button class="btn btn__link btn__secondary">Button Tag</button>
+        <input type="button" value="Input Tag" class="btn btn__link btn__secondary">
+    - name: Hovered state
+      markup: |
+        <a href="#" class="btn btn__link btn__secondary hover">Anchor Tag</a>
+        <button class="btn btn__link btn__secondary hover">Button Tag</button>
+        <input type="button" value="Input Tag" class="btn btn__link btn__secondary hover">
+    - name: Focused state
+      markup: |
+        <a href="#" class="btn btn__link btn__secondary focus">Anchor Tag</a>
+        <button class="btn btn__link btn__secondary focus">Button Tag</button>
+        <input type="button" value="Input Tag" class="btn btn__link btn__secondary focus">
+    - name: Active state
+      markup: |
+        <a href="#" class="btn btn__link btn__secondary active">Anchor Tag</a>
+        <button class="btn btn__link btn__secondary active">Button Tag</button>
+        <input type="button" value="Input Tag" class="btn btn__link btn__secondary active">
+    tags:
+    - cf-buttons
+*/
+.btn__link.btn__secondary,
+.btn__link.btn__secondary:link,
+.btn__link.btn__secondary:visited {
+  border-bottom-color: #75787b;
+  background-color: transparent;
+  color: #75787b;
+}
+.btn__link.btn__secondary:hover,
+.btn__link.btn__secondary.hover {
+  border-bottom-color: #919395;
+  color: #919395;
+}
+.btn__link.btn__secondary:focus,
+.btn__link.btn__secondary.focus {
+  outline-color: #75787b;
+}
+.btn__link.btn__secondary:active,
+.btn__link.btn__secondary.active {
+  border-bottom-color: #43484e;
+  color: #43484e;
+}
+/* topdoc
+    name: Destructive action button link
+    family: cf-buttons
+    notes:
+      - "Note that the .visited, .hover, .focus, .active classes are for
+         demonstration purposes only and should not be used in production."
+    patterns:
+    - name: Default state
+      markup: |
+        <a href="#" class="btn btn__link btn__warning">Anchor Tag</a>
+        <button class="btn btn__link btn__warning">Button Tag</button>
+        <input type="button" value="Input Tag" class="btn btn__link btn__warning">
+    - name: Hovered state
+      markup: |
+        <a href="#" class="btn btn__link btn__warning hover">Anchor Tag</a>
+        <button class="btn btn__link btn__warning hover">Button Tag</button>
+        <input type="button" value="Input Tag" class="btn btn__link btn__warning hover">
+    - name: Focused state
+      markup: |
+        <a href="#" class="btn btn__link btn__warning focus">Anchor Tag</a>
+        <button class="btn btn__link btn__warning focus">Button Tag</button>
+        <input type="button" value="Input Tag" class="btn btn__link btn__warning focus">
+    - name: Active state
+      markup: |
+        <a href="#" class="btn btn__link btn__warning active">Anchor Tag</a>
+        <button class="btn btn__link btn__warning active">Button Tag</button>
+        <input type="button" value="Input Tag" class="btn btn__link btn__warning active">
+    tags:
+    - cf-buttons
+*/
+.btn__link.btn__warning,
+.btn__link.btn__warning:link,
+.btn__link.btn__warning:visited {
+  border-bottom-color: #d12124;
+  background-color: transparent;
+  color: #d12124;
+}
+.btn__link.btn__warning:hover,
+.btn__link.btn__warning.hover {
+  border-bottom-color: #da6750;
+  color: #da6750;
+}
+.btn__link.btn__warning:focus,
+.btn__link.btn__warning.focus {
+  outline-color: #d12124;
+}
+.btn__link.btn__warning:active,
+.btn__link.btn__warning.active {
+  border-bottom-color: #9c301b;
+  color: #9c301b;
+}
+/* topdoc
+  name: EOF
+  eof: true
+*/
+/* ==========================================================================
+   Capital Framework
+   Advanced Typography
+   ========================================================================== */
+/* topdoc
+  name: Theme variables
+  family: cf-typography
+  notes:
+    - "The following color and sizing variables are exposed, allowing you to
+       easily override them before compiling."
+  patterns:
+  - name: Colors
+    codenotes:
+      - |
+        @pull-quote_body
+        @pull-quote_citation
+        @micro-copy-text
+        @date-text
+        @category-slug-text
+        @category-slug-hover
+        @header-slug-thin-border
+        @header-slug-thick-border
+        @padded-header-text
+        @padded-header-bg
+        @padded-header-border
+        @fancy-slug-text
+        @fancy-slug-bg
+        @fancy-slug-border
+        @meta-header-border
+        @jump-link__bg
+        @jump-link__bg-border
+        @list__branded-bullet
+  - name: Sizing
+    codenotes:
+      - |
+        @...
+  tags:
+  - cf-typography
+  - less
+*/
+/* topdoc
+ name: Pull quote
+ family: cf-typography
+ patterns:
+   - name: Default pull quote
+     markup: |
+       <aside class="pull-quote">
+           <div class="pull-quote_body">
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+               Cum corrupti tempora nam nihil qui mollitia consectetur
+               corporis nemo culpa dolorum!
+           </div>
+           <footer>
+               <cite class="pull-quote_citation">
+                   - Author Name
+               </cite>
+           <footer>
+       </aside>
+     notes:
+       - "Use a pull quote to highlight excerpts from the current work.
+         This is not to be confused with blockquote which quotes from an
+         external work."
+       - "Since a pull quote is an excerpt and repeats content from the
+         article it's contained within you should use the aside element."
+   - name: Large pull quote
+     markup: |
+       <aside class="pull-quote pull-quote__large">
+           <div class="pull-quote_body">
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+               Cum corrupti tempora nam nihil qui mollitia consectetur
+               corporis nemo culpa dolorum!
+           </div>
+           <footer>
+               <cite class="pull-quote_citation">
+                   - Author Name
+               </cite>
+           <footer>
+       </aside>
+ tags:
+   - cf-typography
+*/
+.pull-quote_body {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 0.95454545em;
+  font-size: 1.375em;
+  line-height: 1.27272727;
+  margin-bottom: 0.54545455em;
+  color: #101820;
+}
+.pull-quote_body em,
+.pull-quote_body i {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+.pull-quote_body strong,
+.pull-quote_body b {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+@media only all and (max-width: 37.4375em) {
+  .pull-quote_body {
+    margin-top: 0;
+    margin-bottom: 1.16666667em;
+    font-size: 1.125em;
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.22222222;
+  }
+}
+.pull-quote_citation {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0.35714286em;
+  font-size: 0.875em;
+  line-height: 1.57142857;
+  color: #75787b;
+}
+.pull-quote__large .pull-quote_body {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 0.73076923em;
+  font-size: 1.625em;
+  line-height: 1.26923077;
+  margin-bottom: 0.69230769em;
+}
+.pull-quote__large .pull-quote_body em,
+.pull-quote__large .pull-quote_body i {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+.pull-quote__large .pull-quote_body strong,
+.pull-quote__large .pull-quote_body b {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+@media only all and (max-width: 37.4375em) {
+  .pull-quote__large .pull-quote_body {
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0.95454545em;
+    font-size: 1.375em;
+    line-height: 1.27272727;
+  }
+  .pull-quote__large .pull-quote_body em,
+  .pull-quote__large .pull-quote_body i {
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-style: italic;
+    font-weight: normal;
+  }
+  .pull-quote__large .pull-quote_body strong,
+  .pull-quote__large .pull-quote_body b {
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+  }
+}
+@media only all and (max-width: 37.4375em) and only all and (max-width: 37.4375em) {
+  .pull-quote__large .pull-quote_body {
+    margin-top: 0;
+    margin-bottom: 1.16666667em;
+    font-size: 1.125em;
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.22222222;
+  }
+}
+/* topdoc
+  name: Micro copy
+  family: cf-typography
+  patterns:
+    - name: Standard micro copy
+      markup: |
+        <p class="micro-copy">
+            Lorem ipsum dolor sit amet
+        </p>
+      codenotes:
+        - .micro-copy
+    - name: Large micro copy
+      markup: |
+        <p class="micro-copy micro-copy__large">
+            Lorem ipsum dolor sit amet
+        </p>
+      codenotes:
+        - .micro-copy
+  tags:
+    - cf-typography
+*/
+.micro-copy {
+  color: #75787b;
+  font-size: 0.875em;
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+.micro-copy em,
+.micro-copy i {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+.micro-copy strong,
+.micro-copy b {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+.micro-copy__large {
+  font-size: 1em;
+}
+/* topdoc
+  name: Short description
+  family: cf-typography
+  patterns:
+    - name: .short-desc
+      markup: |
+        <p class="short-desc">I am short description.</p>
+      codenotes:
+        - .short-desc
+    - name: .short-desc__large (modifier)
+      markup: |
+        <p class="short-desc short-desc__large">I am large short description.</p>
+      codenotes:
+        - .short-desc__large
+  tags:
+    - cf-typography
+*/
+.short-desc {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+.short-desc em,
+.short-desc i {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+.short-desc strong,
+.short-desc b {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+.short-desc__large {
+  font-size: 1.125em;
+}
+/* topdoc
+  name: Date
+  family: cf-typography
+  patterns:
+    - name: Default date
+      markup: |
+        <span class="date">
+            Nov 4, 2013
+        </span>
+  tags:
+    - cf-typography
+*/
+.date {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0.35714286em;
+  font-size: 0.875em;
+  line-height: 1.57142857;
+  color: #75787b;
+  white-space: nowrap;
+}
+/* topdoc
+  name: Category slug
+  family: cf-typography
+  patterns:
+    - name: Default category slug
+      markup: |
+        <a href="#" class="category-slug">
+            <span class="category-slug_icon cf-icon cf-icon-dialogue"></span>
+            <span class="u-visually-hidden">Category:</span>
+            Consumer finance
+        </a>
+      codenotes:
+        - |
+          Structural cheat sheet:
+          -----------------------
+          .category-slug
+            .category-slug_icon
+            .u-visually-hidden
+      notes:
+        - "We suggest using a .u-visually-hidden element to add more context for
+          screen readers."
+  tags:
+    - cf-typography
+*/
+.category-slug {
+  margin-top: 0;
+  margin-bottom: 1.16666667em;
+  font-size: 1.125em;
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.22222222;
+  display: inline-block;
+  margin-bottom: 0.44444444em;
+  color: #101820;
+}
+a.category-slug {
+  color: #101820;
+  border-color: #101820;
+}
+a.category-slug:visited,
+a.category-slug.visited {
+  border-color: #101820;
+  color: #101820;
+}
+a.category-slug:hover,
+a.category-slug.hover {
+  border-color: #7fb8e6;
+  color: #7fb8e6;
+}
+a.category-slug:focus,
+a.category-slug.focus {
+  border-color: #7fb8e6;
+  color: #7fb8e6;
+}
+a.category-slug:active,
+a.category-slug.active {
+  border-color: #101820;
+  color: #101820;
+}
+/* topdoc
+  name: Header slug
+  family: cf-typography
+  patterns:
+    - name: Default header slug
+      markup: |
+        <h2 class="header-slug">
+            <span class="header-slug_inner">
+                Blog summary
+            </span>
+        </h2>
+      codenotes:
+        - |
+          Structural cheat sheet:
+          -----------------------
+          .header-slug
+            .header-slug_inner
+  tags:
+    - cf-typography
+*/
+.header-slug {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0.35714286em;
+  font-size: 0.875em;
+  line-height: 1.57142857;
+  margin-bottom: 1.21428571em;
+  border-top: 1px solid #e3e4e5;
+}
+.header-slug_inner {
+  display: inline-block;
+  padding-top: 0.28571429em;
+  margin-top: -3px;
+  border-top: 5px solid #2cb34a;
+}
+/* topdoc
+  name: Padded header
+  family: cf-typography
+  patterns:
+    - name: Default padded header
+      markup: |
+        <h2 class="padded-header">
+            Header
+        </h2>
+      codenotes:
+        - .padded-header
+  tags:
+    - cf-typography
+*/
+.padded-header {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0.35714286em;
+  font-size: 0.875em;
+  line-height: 1.57142857;
+  padding: 0.57142857em 0.71428571em;
+  margin-bottom: 0;
+  border-bottom: 1px solid #babbbd;
+  background: #f1f2f2;
+  color: #43484e;
+}
+
+/* topdoc
+  name: Meta header
+  family: cf-typography
+  patterns:
+    - name: Default meta header
+      markup: |
+        <div class="meta-header">
+            <span class="meta-header_right date">
+                Nov 4, 2013
+            </span>
+            <a href="#" class="meta-header_left category-slug">
+                <span class="cf-icon cf-icon-credit-card"></span>
+                Consumer finance
+            </a>
+        </div>
+      codenotes:
+        - |
+          Structural cheat sheet:
+          -----------------------
+          .meta-header
+            .meta-header_right
+            .meta-header_left
+      notes:
+        - ".meta-header_right should come first in the markup so that when it
+          floats to the right it will appear on the same line as .meta-header_left."
+        - "Note that the example shows .meta-header_left using the
+          .category-slug pattern and .meta-header_right using the .date pattern
+          but you could use other patterns in place of them. Or you can even
+          swap them so that date is attached to .meta-header_left and
+          .category-slug is attacked to .meta-header_right."
+    - name: Alternate meta header arrangements
+      markup: |
+        <div class="meta-header">
+            <a href="#" class="meta-header_right category-slug">
+                <span class="cf-icon cf-icon-credit-card"></span>
+            </a>
+            <span class="meta-header_left date">
+                Nov 4, 2013
+            </span>
+        </div>
+        <br>
+        <div class="meta-header">
+            <a href="#" class="meta-header_left category-slug">
+                <span class="cf-icon cf-icon-credit-card"></span>
+                Consumer finance
+            </a>
+        </div>
+      notes:
+        - "Just some random variations to show off what you could do."
+  tags:
+    - cf-typography
+*/
+.meta-header {
+  padding-bottom: 0.5em;
+  margin-bottom: 0.625em;
+  border-bottom: 1px solid #babbbd;
+}
+.meta-header_left {
+  margin-bottom: 0;
+}
+.meta-header_right {
+  display: block;
+  margin-bottom: 0;
+}
+@media only all and (min-width: 37.5em) {
+  .meta-header_right {
+    float: right;
+    display: inline-block;
+  }
+}
+
+/* topdoc
+  name: Styled link
+  family: cf-typography
+  patterns:
+    - name: .styled-link
+      markup: |
+        <a class="styled-link" href="#">
+            Default styled link
+        </a>
+      codenotes:
+        - .styled-link
+  tags:
+    - cf-typography
+*/
+.styled-link {
+  border-bottom-width: 1px;
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1em;
+}
+/* topdoc
+  name: Jump link
+  family: cf-typography
+  patterns:
+    - name: .jump-link
+      markup: |
+        <a class="jump-link" href="#">
+            <span class="jump-link_text">Default jump link</span>
+        </a>
+      codenotes:
+        - .jump-link
+    - name: .jump-link__large (modifier)
+      markup: |
+        <a class="jump-link jump-link__large" href="#">
+            <span class="jump-link_text">Large jump link</span>
+        </a>
+      codenotes:
+        - .jump-link__large
+      notes:
+        - "18px font-size, compared to the default of 16px"
+    - name: .jump-link__<icon> (modifier)
+      markup: |
+        <a class="jump-link jump-link__right" href="#">
+            <span class="jump-link_text">Jump link using the right icon from cf-icons</span>
+        </a>
+      codenotes:
+        - .jump-link__<icon>
+      notes:
+        - ".jump-link extends .icon-link, so all that is needed to add an icon
+           to a jump link is to add a modifier with the icon's name."
+    - name: .jump-link__before (modifier)
+      markup: |
+        <a class="jump-link jump-link__left jump-link__before" href="#">
+            <span class="jump-link_text">Jump link with icon on left</span>
+        </a>
+      codenotes:
+        - .jump-link__<icon>.jump-link__before
+      notes:
+        - "Jump links can also have icons before the text, like icon links."
+    - name: .jump-link__bg (modifier)
+      markup: |
+        <a class="jump-link jump-link__bg" href="#">
+            <span class="jump-link_text">Jump link with grey background and
+                solid borders on small screens</span>
+        </a>
+      codenotes:
+        - .jump-link__bg
+  tags:
+    - cf-typography
+*/
+.jump-link {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1em;
+  border-bottom-width: 0;
+  position: relative;
+}
+.jump-link_text {
+  border-bottom-width: 1px;
+  border-bottom-style: inherit;
+}
+
+.jump-link__no-wrap {
+  white-space: nowrap;
+}
+.jump-link__large {
+  font-size: 1.125em;
+}
+@media only all and (max-width: 37.4375em) {
+  .jump-link {
+    box-sizing: border-box;
+    display: block;
+    padding: 0.625em 1.25em 0.625em 0;
+    border: dotted #ffffff;
+    border-width: 1px 0;
+    margin-right: 0;
+    width: 100%;
+    text-align: left;
+  }
+  .jump-link_text {
+    border-bottom-width: 0;
+  }
+  .jump-link__bg {
+    background: #f1f2f2;
+    border: solid #e3e4e5;
+    border-width: 1px 0;
+    padding: 0.625em 1.25em 0.625em 1em;
+  }
+}
+/* topdoc
+  name: Block link
+  family: cf-typography
+  patterns:
+    - name: .block-link
+      markup: |
+        <a class="block-link" href="#">
+            Default block link
+        </a>
+      codenotes:
+        - .block-link
+      notes:
+        - "Convert a standard inline link to a block-level element with padding,
+           background, and borders."
+        - "Primarily used within a max-width 599px media query (see .jump-link
+           and .list__links)."
+  tags:
+    - cf-typography
+*/
+.block-link {
+  box-sizing: border-box;
+  display: block;
+  padding: 0.625em 1.25em 0.625em 0;
+  border: dotted #ffffff;
+  border-width: 1px 0;
+  margin-right: 0;
+  width: 100%;
+  text-align: left;
+}
+/* topdoc
+  name: Unstyled list modifier
+  family: cf-typography
+  patterns:
+    - name: Default example
+      markup: |
+        <ul class="list list__unstyled">
+            <li class="list_item">
+                <a class="list_link">List item 1</a>
+            </li>
+            <li class="list_item">
+                <a class="list_link">List item 2</a>
+            </li>
+            <li class="list_item">
+                <a class="list_link">List item 3</a>
+            </li>
+        </ul>
+      codenotes:
+        - .list.list__unstyled
+  tags:
+    - cf-typography
+*/
+.list__unstyled {
+  padding-left: 0;
+  list-style-type: none;
+}
+.list__unstyled .list_item {
+  margin-left: 0;
+}
+/* topdoc
+  name: Spaced list modifier
+  family: cf-typography
+  patterns:
+    - name: Default example
+      markup: |
+        <ul class="list list__spaced">
+            <li class="list_item">
+                <a class="list_link">List item 1</a>
+            </li>
+            <li class="list_item">
+                <a class="list_link">List item 2</a>
+            </li>
+            <li class="list_item">
+                <a class="list_link">List item 3</a>
+            </li>
+        </ul>
+      codenotes:
+        - .list.list__spaced
+  tags:
+    - cf-typography
+*/
+.list__spaced .list_item + .list_item {
+  margin-top: 1.5em;
+}
+/* topdoc
+  name: Spaced list item modifier
+  family: cf-typography
+  patterns:
+    - name: Default example
+      markup: |
+        <ul class="list">
+            <li class="list_item">
+                <a class="list_link">List item 1</a>
+            </li>
+            <li class="list_item">
+                <a class="list_link">List item 2</a>
+            </li>
+            <li class="list_item list_item__spaced">
+                <a class="list_link">List item 3</a>
+            </li>
+            <li class="list_item">
+                <a class="list_link">List item 4</a>
+            </li>
+        </ul>
+  tags:
+    - cf-typography
+*/
+.list_item__spaced {
+  margin-top: 1.5em;
+}
+/* topdoc
+  name: Horizontal list modifier
+  family: cf-typography
+  patterns:
+    - name: Default example
+      markup: |
+        <ul class="list list__horizontal">
+            <li class="list_item">
+                <a class="list_link">List item 1</a>
+            </li>
+            <li class="list_item">
+                <a class="list_link">List item 2</a>
+            </li>
+            <li class="list_item">
+                <a class="list_link">List item 3</a>
+            </li>
+        </ul>
+  tags:
+    - cf-typography
+*/
+.list__horizontal {
+  padding-left: 0;
+}
+.list__horizontal .list_item {
+  display: inline-block;
+}
+.list__horizontal .list_item {
+  margin-right: 0.25em;
+  margin-left: 0;
+}
+/* topdoc
+  name: Icon list modifier
+  family: cf-typography
+  notes:
+    - "Set up a list with icons on the left, in place of bullets."
+    - "Will need some more work to allow lines to wrap."
+  patterns:
+    - name: Default example
+      markup: |
+        <ul class="list list__icons">
+            <li class="list_item">
+                <span class="cf-icon cf-icon-email list_icon"></span>
+                List item 1
+            </li>
+            <li class="list_item">
+                <span class="cf-icon cf-icon-phone list_icon"></span>
+                List item 1
+            </li>
+            <li class="list_item">
+                <span class="cf-icon cf-icon-fax list_icon"></span>
+                List item 1
+            </li>
+        </ul>
+  tags:
+    - cf-typography
+*/
+.list__icons {
+  padding-left: 0;
+  list-style-type: none;
+}
+.list__icons .list_item {
+  margin-left: 0;
+}
+.list__icons .list_icon {
+  width: 1.5em;
+  text-align: center;
+}
+
+/* topdoc
+ name: Branded list modifier
+ family: cf-typography
+ patterns:
+   - name: Branded list
+     markup: |
+       <ul class="list__branded">
+           <li>First item</li>
+           <li>Second item</li>
+           <li>Third item</li>
+       </ul>
+     codenotes:
+       - ".list__branded"
+     notes:
+       - "Uses .custom-bullet mixin to generate custom main-brand-color square bullets."
+ tags:
+   - cf-typography
+*/
+.list__branded li,
+.list__branded .list_item {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  position: relative;
+}
+.list__branded li em,
+.list__branded .list_item em,
+.list__branded li i,
+.list__branded .list_item i {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+.list__branded li strong,
+.list__branded .list_item strong,
+.list__branded li b,
+.list__branded .list_item b {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+.list__branded li:before,
+.list__branded .list_item:before {
+  content: "\25AA";
+  font-family: inherit;
+  font-size: 1.375em;
+  color: #2cb34a;
+  line-height: 1;
+  position: absolute;
+  left: -0.86363636em;
+}
+/* topdoc
+  name: EOF
+  eof: true
+*/
+
+/* ==========================================================================
+   Capital Framework
+   Utilities
+   ========================================================================== */
+/* topdoc
+  name: Clearfix
+  family: cf-core
+  patterns:
+    - name: Utility class
+      markup: |
+        <div class="u-clearfix">
+            <div style="float:left; width:100%; height:60px; background:black;"></div>
+        </div>
+      codenotes:
+        - .u-clearfix;
+      notes:
+        - "Use this class to clear floats. For example, without .u-clearfix the
+           black box would spill into the markup section."
+        - "More information: http://css-tricks.com/snippets/css/clear-fix/"
+  tags:
+    - cf-core
+*/
+.u-clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* topdoc
+  name: Visually hidden
+  family: cf-core
+  patterns:
+    - name: Utility class
+      markup: |
+        <h1>
+            <a href="#">
+                <span class="cf-icon cf-icon-twitter-square"></span>
+                <span class="u-visually-hidden">Share on Twitter</span>
+            </a>
+        </h1>
+      codenotes:
+        - .u-visually-hidden;
+      notes:
+        - "Use this class to hide something from view while keeping it
+          accessible to screen readers."
+  tags:
+    - cf-core
+*/
+.u-visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+/* topdoc
+  name: Inline block
+  family: cf-core
+  patterns:
+    - name: Utility class
+      codenotes:
+        - .u-inline-block;
+      notes:
+        - "Also adds a .lt-ie8 class to hack inline-block for IE 7 and below."
+  tags:
+    - cf-core
+*/
+.u-inline-block {
+  display: inline-block;
+}
+/* topdoc
+  name: Floating right
+  family: cf-core
+  patterns:
+    - name: Utility class
+      codenotes:
+        - .u-right;
+      notes:
+        - "IE7 float: right drop bug fixes:"
+        - "1. If the float: right follows an element in the html structure that
+          should be to its left (and not above it), then that preceding
+          element(s) must be float: left.
+          http://stackoverflow.com/questions/10981767/clean-css-fix-of-ie7s-float-right-drop-bug#answer-11437688"
+        - "2. Simply change the markup order so that the element floating right
+          comes before the element to its left."
+  tags:
+    - cf-core
+*/
+.u-right {
+  float: right;
+}
+/* topdoc
+  name: Break word
+  family: cf-core
+  patterns:
+    - name: Utility class
+      markup: |
+        <div style="width: 100px;">
+            This link should break:
+            <br>
+            <a class="u-break-word" href="#">
+                something@something.com
+            </a>
+            <br>
+            <br>
+            This link should not:
+            <br>
+            <a href="#">
+                something@something.com
+            </a>
+        </div>
+      codenotes:
+        - .u-break-word
+      notes:
+        - "Use this on elements where you need the words to break when confined
+           to small containers."
+        - "This only works in IE8 when the element with the .u-break-word class
+           has layout. See <http://stackoverflow.com/questions/3997223/word-wrapbreak-word-not-working-in-ie8>
+           for more information."
+  tags:
+    - cf-core
+*/
+.u-break-word {
+  word-break: break-all;
+}
+
+/* topdoc
+  name: Margin utilities
+  family: cf-core
+  patterns:
+    - name: Utility classes
+      codenotes:
+        - .u-m<p><#>;
+      notes:
+        - "Replace <p> with the first letter of the position ('t' for top or 'b'
+           for bottom) and <#> with the pixel value of the margin you want."
+        - "Available values: 0, 5, 10, 15, 20, 30, 45, 60."
+  tags:
+    - cf-core
+*/
+.u-mt0 {
+  margin-top: 0 !important;
+}
+.u-mb0 {
+  margin-bottom: 0 !important;
+}
+.u-mt5 {
+  margin-top: 5px !important;
+}
+.u-mb5 {
+  margin-bottom: 5px !important;
+}
+.u-mt10 {
+  margin-top: 10px !important;
+}
+.u-mb10 {
+  margin-bottom: 10px !important;
+}
+.u-mt15 {
+  margin-top: 15px !important;
+}
+.u-mb15 {
+  margin-bottom: 15px !important;
+}
+.u-mt20 {
+  margin-top: 20px !important;
+}
+.u-mb20 {
+  margin-bottom: 20px !important;
+}
+.u-mt30 {
+  margin-top: 30px !important;
+}
+.u-mb30 {
+  margin-bottom: 30px !important;
+}
+.u-mt45 {
+  margin-top: 45px !important;
+}
+.u-mb45 {
+  margin-bottom: 45px !important;
+}
+.u-mt60 {
+  margin-top: 60px !important;
+}
+.u-mb60 {
+  margin-bottom: 60px !important;
+}
+/* topdoc
+  name: Width utilities
+  family: cf-core
+  patterns:
+    - name: Percent-based
+      markup: |
+        <div class="u-w100pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w100pct</code>
+        </div>
+        <div class="u-w90pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w90pct</code>
+        </div>
+        <div class="u-w80pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w80pct</code>
+        </div>
+        <div class="u-w70pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w70pct</code>
+        </div>
+        <div class="u-w60pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w60pct</code>
+        </div>
+        <div class="u-w50pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w50pct</code>
+        </div>
+        <div class="u-w40pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w40pct</code>
+        </div>
+        <div class="u-w30pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w30pct</code>
+        </div>
+        <div class="u-w20pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w20pct</code>
+        </div>
+        <div class="u-w10pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w10pct</code>
+        </div>
+        <div class="u-w75pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w75pct</code>
+        </div>
+        <div class="u-w25pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w25pct</code>
+        </div>
+        <div class="u-w66pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w66pct</code>
+        </div>
+        <div class="u-w33pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w33pct</code>
+        </div>
+      notes:
+        - "Inline styles are for demonstration purposes only, please don't use
+           them."
+  tags:
+    - cf-core
+*/
+.u-w100pct {
+  width: 100%;
+}
+.u-w90pct {
+  width: 90%;
+}
+.u-w80pct {
+  width: 80%;
+}
+.u-w70pct {
+  width: 70%;
+}
+.u-w60pct {
+  width: 60%;
+}
+.u-w50pct {
+  width: 50%;
+}
+.u-w40pct {
+  width: 40%;
+}
+.u-w30pct {
+  width: 30%;
+}
+.u-w20pct {
+  width: 20%;
+}
+.u-w10pct {
+  width: 10%;
+}
+.u-w75pct {
+  width: 75%;
+}
+.u-w25pct {
+  width: 25%;
+}
+.u-w66pct {
+  width: 66.66666667%;
+}
+.u-w33pct {
+  width: 33.33333333%;
+}
+/* topdoc
+  name: Width-specific display
+  family: cf-core
+  patterns:
+    - name: Show on mobile
+      markup: |
+        <section>
+            <p>The the text in the box below is visible only at widths less than 600px</p>
+            <div style="border: 1px solid black; height: 22px; padding: 5px;">
+                <p class="u-show-on-mobile">Visible on mobile</p>
+            </div>
+        </section>
+      codenotes:
+        - ".u-show-on-mobile"
+        - "Uses 'display:block' to toggle display. Would need to be extended
+          for inline use cases."
+      notes:
+        - "Displays an element only at mobile widths."
+    - name: Hide on mobile
+      markup: |
+        <section>
+            <p>The text in the box below is hidden at widths less than 600px</p>
+            <div style="border: 1px solid black; height: 22px; padding: 5px;">
+                <p class="u-hide-on-mobile">Hidden on mobile</p>
+            </div>
+        </section>
+      codenotes:
+        - ".u-hide-on-mobile"
+      notes:
+        - "Hides an element at mobile widths"
+  tags:
+    - cf-core
+*/
+@media only all and (max-width: 37.4375em) {
+  .u-hide-on-mobile {
+    display: none;
+  }
+}
+.u-show-on-mobile {
+  display: none;
+}
+@media only all and (max-width: 37.4375em) {
+  .u-show-on-mobile {
+    display: block;
+  }
+}
+/* topdoc
+  name: Small text utility
+  family: cf-core
+  patterns:
+    - name: .u-small-text (utility class)
+      markup: |
+        Lorem ipsum<br>
+        <span class="u-small-text">dolor sit amet</span>
+      codenotes:
+        - ".u-small-text"
+      notes:
+        - "14px text."
+        - "The utility class should only be used when the default text size is
+           16px. For example you wouldn't want to use the class inside of an
+           `h1` because the `font-size` in the `h1` will make `.u-small-text`
+           bigger than it should be. See the docs for the `.u-small-text()`
+           mixin."
+    - name: .u-small-text() (Less mixin)
+      codenotes:
+        - ".u-small-text(@context)"
+        - |
+          // Mixin usage:
+          .example {
+            font-size: unit(20px / @base-font-size-px, em);
+            small {
+              .u-small-text(20px);
+            }
+          }
+          // Compiles to:
+          .example {
+            font-size: 1.25em;
+          }
+          .example small {
+            font-size: 0.7em;
+          }
+      notes:
+        - "This mixin enables you to easily create consistent small text by
+           passing the context `font-size`."
+  tags:
+    - cf-core
+*/
+.u-small-text {
+  font-size: 0.875em;
+}
+small {
+  font-size: 0.875em;
+}
+/* topdoc
+    name: EOF
+    eof: true
+*/
+/* ==========================================================================
+   Capital Framework
+   Base styles
+   ========================================================================== */
+/* topdoc
+  name: Type hierarchy
+  family: cf-core
+  patterns:
+    - name: Default body type
+      markup: |
+        <p>Lorem ipsum dolor sit amet, <em>consectetur adipisicing elit</em>, sed do eiusmod <strong>tempor incididunt</strong> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    - name: Heading level 1
+      markup: |
+        <h1>Example heading element</h1>
+        <p class="h1">A non-heading element</p>
+      notes:
+        - Responsive header. At mobile sizes, displays as h2.
+    - name: Heading level 2
+      markup: |
+        <h2>Example heading element</h2>
+        <p class="h2">A non-heading element</p>
+      notes:
+        - Responsive header. At mobile sizes, displays as h3.
+    - name: Heading level 3
+      markup: |
+        <h3>Example heading element</h3>
+        <p class="h3">A non-heading element</p>
+      notes:
+        - Responsive header. At mobile sizes, displays as h4.
+    - name: Heading level 4
+      markup: |
+        <h4>Example heading element</h4>
+        <p class="h4">A non-heading element</p>
+    - name: Heading level 5
+      markup: |
+        <h5>Example heading element</h5>
+        <p class="h5">A non-heading element</p>
+    - name: Heading level 6
+      markup: |
+        <h6>Example heading element</h6>
+        <p class="h6">A non-heading element</p>
+    - name: Super header
+      markup: |
+        <h1 class="superheader">Example super heading</h1>
+        <p class="superheader">Example super heading</p>
+  tags:
+    - cf-core
+*/
+body {
+  color: #101820;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 100%;
+  line-height: 1.375;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+h1 em,
+.h1 em,
+h2 em,
+.h2 em,
+h3 em,
+.h3 em,
+h1 i,
+.h1 i,
+h2 i,
+.h2 i,
+h3 i,
+.h3 i {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+h1 strong,
+.h1 strong,
+h2 strong,
+.h2 strong,
+h3 strong,
+.h3 strong,
+h1 b,
+.h1 b,
+h2 b,
+.h2 b,
+h3 b,
+.h3 b {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+h1,
+.h1 {
+  margin-top: 0;
+  margin-bottom: 0.47058824em;
+  font-size: 2.125em;
+  line-height: 1.29411765;
+}
+@media only all and (max-width: 37.4375em) {
+  h1,
+  .h1 {
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0.73076923em;
+    font-size: 1.625em;
+    line-height: 1.26923077;
+  }
+  h1 em,
+  .h1 em,
+  h1 i,
+  .h1 i {
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-style: italic;
+    font-weight: normal;
+  }
+  h1 strong,
+  .h1 strong,
+  h1 b,
+  .h1 b {
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+  }
+}
+@media only all and (max-width: 37.4375em) and only all and (max-width: 37.4375em) {
+  h1,
+  .h1 {
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0.95454545em;
+    font-size: 1.375em;
+    line-height: 1.27272727;
+  }
+  h1 em,
+  .h1 em,
+  h1 i,
+  .h1 i {
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-style: italic;
+    font-weight: normal;
+  }
+  h1 strong,
+  .h1 strong,
+  h1 b,
+  .h1 b {
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+  }
+}
+@media only all and (max-width: 37.4375em) and only all and (max-width: 37.4375em) and only all and (max-width: 37.4375em) {
+  h1,
+  .h1 {
+    margin-top: 0;
+    margin-bottom: 1.16666667em;
+    font-size: 1.125em;
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.22222222;
+  }
+}
+h2,
+.h2 {
+  margin-top: 0;
+  margin-bottom: 0.73076923em;
+  font-size: 1.625em;
+  line-height: 1.26923077;
+}
+@media only all and (max-width: 37.4375em) {
+  h2,
+  .h2 {
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0.95454545em;
+    font-size: 1.375em;
+    line-height: 1.27272727;
+  }
+  h2 em,
+  .h2 em,
+  h2 i,
+  .h2 i {
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-style: italic;
+    font-weight: normal;
+  }
+  h2 strong,
+  .h2 strong,
+  h2 b,
+  .h2 b {
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+  }
+}
+@media only all and (max-width: 37.4375em) and only all and (max-width: 37.4375em) {
+  h2,
+  .h2 {
+    margin-top: 0;
+    margin-bottom: 1.16666667em;
+    font-size: 1.125em;
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.22222222;
+  }
+}
+h3,
+.h3 {
+  margin-top: 0;
+  margin-bottom: 0.95454545em;
+  font-size: 1.375em;
+  line-height: 1.27272727;
+}
+@media only all and (max-width: 37.4375em) {
+  h3,
+  .h3 {
+    margin-top: 0;
+    margin-bottom: 1.16666667em;
+    font-size: 1.125em;
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.22222222;
+  }
+}
+h4,
+.h4 {
+  margin-top: 0;
+  margin-bottom: 1.16666667em;
+  font-size: 1.125em;
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.22222222;
+}
+h5,
+h6,
+.h5,
+.h6 {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+h5,
+.h5 {
+  margin-top: 0;
+  margin-bottom: 0.35714286em;
+  font-size: 0.875em;
+  line-height: 1.57142857;
+}
+h6,
+.h6 {
+  margin-top: 0;
+  margin-bottom: 0.41666667em;
+  font-size: 0.75em;
+  line-height: 1.83333333;
+}
+.superheader {
+  margin-bottom: 0.1875em;
+  font-size: 3em;
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.25;
+}
+/* topdoc
+  name: Margins
+  family: cf-core
+  patterns:
+    - name: Consistent vertical margins
+      notes:
+        - "Assumes that the font size of each of these items remains the default."
+      markup: |
+        <p>Paragraph margin example</p>
+        <p>Paragraph margin example</p>
+  tags:
+    - cf-core
+*/
+p,
+ul,
+ol,
+dl,
+table,
+figure {
+  margin-top: 0;
+  margin-bottom: 1.25em;
+}
+/* topdoc
+  name: Default link
+  notes:
+    - "Note that the .visited, .hover, .focus, .active classes are for demonstration purposes only and should not 
+      be used in production."
+  family: cf-core
+  patterns:
+    - name: Default state
+      markup: |
+        <a href="#">Default link style</a>
+    - name: Visited state
+      markup: |
+        <a href="#" class="visited">Visited link style</a>
+    - name: Hovered state
+      markup: |
+        <a href="#" class="hover">Hovered link style</a>
+    - name: Focused state
+      markup: |
+        <a href="#" class="focus">Focused link style</a>
+    - name: Active state
+      markup: |
+        <a href="#" class="active">Active link style</a>
+  tags:
+    - cf-core
+*/
+a {
+  border-width: 0;
+  border-style: dotted;
+  border-color: #0072ce;
+  color: #0072ce;
+  text-decoration: none;
+}
+a:visited,
+a.visited {
+  border-color: #005e5d;
+  color: #005e5d;
+}
+a:hover,
+a.hover {
+  border-style: solid;
+  border-color: #7fb8e6;
+  color: #7fb8e6;
+}
+a:focus,
+a.focus {
+  border-style: solid;
+  outline: thin dotted;
+}
+a:active,
+a.active {
+  border-style: solid;
+  border-color: #002d72;
+  color: #002d72;
+}
+/* topdoc
+  name: Underlined links
+  family: cf-core
+  patterns:
+    - name: States
+      notes:
+        - "Note that the .visited, .hover, .focus, .active classes are for demonstration purposes only and should not 
+          be used in production."
+        - "The underline style properties are mostly set above in the a tag.
+          To enable the underline simply set a bottom-border-width as done here."
+      markup: |
+        <p>
+            <a href="#">Default</a>,
+            <a href="#" class="visited">Visited</a>,
+            <a href="#" class="hover">Hovered</a>,
+            <a href="#" class="focus">Focused</a>,
+            <a href="#" class="active">Active</a>
+        </p>
+    - name: Underline conditions
+      notes:
+        - "We're restricting link borders to links within p, li, and dd so that
+          we don't have to override them every time we want a plain link."
+      markup: |
+        <p>
+            <a href="#">A child of a paragraph</a>
+        </p>
+        <ul>
+            <li>
+                <a href="#">A child of a list item</a>
+            </li>
+        </ul>
+        <dl>
+            <dt>
+                Definition list term
+            </dt>
+            <dd>
+                <a href="#">A child of a definition list description</a>
+            </dd>
+        </dl>
+    - name: Exceptions for underlined links
+      notes:
+        - "Inline text links inside of a nav element are not underlined."
+      markup: |
+        <nav>
+            <p>
+                <a href="#">A child of a paragraph</a>
+            </p>
+            <ul>
+                <li>
+                    <a href="#">A child of a list item</a>
+                </li>
+            </ul>
+            <dl>
+                <dt>
+                    Definition list term
+                </dt>
+                <dd>
+                    <a href="#">A child of a definition list description</a>
+                </dd>
+            </dl>
+        </nav>
+  tags:
+    - cf-core
+*/
+p a,
+li a,
+dd a {
+  border-bottom-width: 1px;
+}
+nav a {
+  border-bottom-width: 0;
+}
+
+/* topdoc
+  name: Lists
+  family: cf-core
+  patterns:
+    - name: Unordered list
+      markup: |
+        <ul>
+            <li>List item</li>
+            <li>List item</li>
+            <li>List item</li>
+        </ul>
+  tags:
+    - cf-core
+*/
+ul {
+  list-style: square;
+}
+
+/* topdoc
+  name: Block quote
+  family: cf-core
+  patterns:
+    - name: Default block quote
+      markup: |
+        <blockquote cite="link-to-source">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
+            similique fugit hic eligendi praesentium officiis illum optio iusto
+            commodi eum tempore nisi ad in perferendis enim quo dolores.
+            Reprehenderit similique earum quibusdam possimus vitae esse
+            nesciunt mollitia sed beatae aliquid dolores iure a impedit quam
+            minus eum modi illum ducimus eligendi eveniet labore non sequi
+            voluptate et totam praesentium animi itaque asperiores dolorum
+            sunt laudantium repellat nam commodi. Perspiciatis natus aliquam
+            veniam officiis ducimus voluptatum ut necessitatibus non!
+        </blockquote>
+      notes:
+        - "Use a block quote to quote from an external work. See .pull-quote if
+          you need to highlight an excerpt from the current work."
+        - "It is best practice to document the URL of a quoted work using the
+          cite attribute."
+  tags:
+    - cf-core
+*/
+blockquote {
+  margin: 1.25em;
+}
+@media only all and (min-width: 37.5em) {
+  blockquote {
+    margin: 1.75em 2.5em;
+  }
+}
+
+/* topdoc
+  name: Images
+  family: cf-core
+  patterns:
+    - name: max-width
+      markup: |
+            <img src="http://placekitten.com/800/40" alt="">
+      notes:
+        - "Gives all images a default max-width of 100% of their container."
+  tags:
+    - cf-core
+*/
+img {
+  max-width: 100%;
+}
+
+  </style> <!-- end of data-style-block="cf" -->
+
+  <style type="text/css" data-style-block="email">
+/* ==========================================================================
+   Email template styles begin here
+   ========================================================================== */
+body,
+.body {
+  margin-bottom: 0;
+  background: #ffffff;
+  font-size: 16px;
+}
+table {
+  width: 100%;
+  font-family: "Avenir Next", Arial, sans-serif;
+}
+th,
+td {
+  padding: 0;
+}
+tbody > tr:nth-child(2n+1) > th,
+tbody > tr:nth-child(2n+1) > td {
+}
+.wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #ffffff;
+}
+.wrapper th,
+.wrapper td {
+  padding: 30px 15px;
+}
+td.header,
+td.footer {
+  padding: 0;
+  border-bottom: 1px solid #babbbd;
+}
+td.header table,
+td.footer table,
+td.header p,
+td.footer p {
+  margin-bottom: 0;
+}
+td.header img,
+td.footer img {
+  display: block;
+}
+.logo {
+  width: 267px;
+}
+.logo__footer {
+  width: 297px;
+}
+.intro {
+  width: 333px;
+}
+.main a {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+tr.footer-row {
+  background: #f1f2f2;
+}
+td.footer {
+  border-top: 3px solid #2cb34a;
+  border-bottom: none;
+}
+.footer td {
+  padding-right: 30px;
+  padding-left: 30px;
+  font-size: 0.75em;
+}
+.address {
+  width: 283px;
+}
+.address td {
+  padding-top: 40px;
+}
+a[href^="tel"] {
+  border-bottom: none;
+  color: #101820;
+  font-weight: 500;
+}
+@media only screen and (max-width: 601px) and (orientation: portrait) {
+  .header {
+    background: #ffcccc;
+  }
+  .logo,
+  .intro,
+  .address {
+    display: block !important;
+    width: 100% !important;
+  }
+  .logo img {
+    height: 40px;
+  }
+  .logo__header td {
+    width: 100% !important;
+    padding: 10px;
+    border-bottom: 1px solid #e3e4e5;
+  }
+  .logo__header img {
+    margin: 0 auto;
+  }
+  .footer td {
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 1em;
+  }
+  .logo__footer td {
+    padding-bottom: 15px;
+  }
+  .address td {
+    padding-top: 0;
+  }
+}
+td.single-cell-fix {
+  padding: 0 0 0 1px;
+}
+  </style> <!-- end of data-style-block="email" -->
 </head>
 
 <body>
@@ -25,20 +2766,36 @@
       <td class="center" align="center" valign="top">
         <center>
 
-          <table class="wrapper" border="0" cellpadding="0" cellspacing="0" width="580">
+          <table class="wrapper" border="0" cellpadding="0" cellspacing="0" width="600">
+
             <tr>
               <td class="header">
-                <table class="logo logo__header" align="right" border="0" cellpadding="0" cellspacing="0" width="237">
-                  <img src="static/img/logo_small-exec.png" alt="" height="50" />
+                <table class="logo logo__header"
+                       align="right" border="0" cellpadding="0" cellspacing="0" width="267">
+                  <tr>
+                    <td align="center" valign="middle">
+                      <center>
+                        <img src="http://cfpb.github.io/cfgov-refresh/static/img/logo_sm-exec.png"
+                             alt=""
+                             align="center"
+                             height="50" />
+                      </center>
+                    </td>
+                    <td class="single-cell-fix"></td>
+                  </tr>
                 </table>
-                <table align="left" border="0" cellpadding="0" cellspacing="0" width="343">
-                  <p>Thank you for contacting the Consumer Financial Protection Bureau (CFPB).</p>
+                <table class="intro" align="left" border="0" cellpadding="0" cellspacing="0" width="323">
+                  <tr>
+                    <td valign="middle">
+                      <p>Thank you for contacting the Consumer Financial Protection Bureau (CFPB).</p>
+                    </td>
+                  </tr>
                 </table>
               </td>
             </tr>
 
-            <tr class="main">
-              <td colspan="2">
+            <tr>
+              <td class="main">
                 <p>
                   Our Office of Consumer Response has received your submission and will
                   review it as soon as possible to determine if it involves a Federal
@@ -82,20 +2839,41 @@
                   <a href="http://www.consumerfinance.gov/">consumerfinance.gov</a><br />
                   <a href="tel:+18554112372">(855) 411-CFPB (2372)</a>
                 </p>
+              </td><!-- /.main -->
+            </tr>
+
+            <tr class="footer-row">
+              <td class="footer">
+                <table class="logo logo__footer"
+                       align="left"
+                       border="0"
+                       cellpadding="0"
+                       cellspacing="0"
+                       width="297">
+                  <tr>
+                    <td valign="middle">
+                      <img src="http://cfpb.github.io/cfgov-refresh/static/img/logo_sm-exec.png"
+                           alt="Consumer Financial Protection Bureau"
+                           height="50" />
+                    </td>
+                  </tr>
+                </table>
+                <table class="address"
+                       align="right"
+                       border="0"
+                       cellpadding="0"
+                       cellspacing="0"
+                       width="323">
+                  <tr>
+                    <td valign="middle">
+                      1700 G Street NW<br />
+                      Washington, D.C. 20552
+                    </td>
+                  </tr>
+                </table>
               </td>
             </tr>
 
-            <tr class="footer">
-              <td class="logo logo__footer" width="237">
-                <img src="static/img/logo_small-exec.png"
-                   alt="Consumer Financial Protection Bureau"
-                   height="50" />
-              </td>
-              <td>
-                1700 G Street NW<br />
-                Washington, D.C. 20552
-              </td>
-            </tr>
           </table>
 
         </center>

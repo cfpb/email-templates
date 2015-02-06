@@ -219,15 +219,6 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: '<%= loc.src %>',
-            src: [
-              // HTML files
-              '*.html',
-            ],
-            dest: '<%= loc.dist %>'
-          },
-          {
-            expand: true,
             cwd: '<%= loc.src %>/static',
             src: [
               // Images
@@ -326,13 +317,12 @@ module.exports = function(grunt) {
         },
         files: {
           // Destination : Source
-          'src/index.min.html': 'src/index.html'
+          'dist/index.min.html': 'dist/index.html'
         }
       }
     },
 
     nodemailer: {
-
       options: {
         transport: {
           type: 'sendmail',
@@ -347,16 +337,33 @@ module.exports = function(grunt) {
           {
             email: 'scott.cranfill@cfpb.gov',
             name: 'Scott Cranfill'
-          }
+          },
+          // {
+          //   email: 'scott.cranfill@gmail.com',
+          //   name: 'Scott Cranfill'
+          // },
         ]
       },
 
       inline: { /* use above options*/ },
 
       external: {
+        src: ['dist/index.html']
+      },
+
+      external_min: {
         src: ['dist/index.min.html']
       }
     },
+
+    premailer: {
+      simple: {
+        options: {},
+        files: {
+          'dist/index.html': ['src/index.html']
+        }
+      }
+    }
 
   };
 
@@ -372,7 +379,7 @@ module.exports = function(grunt) {
   grunt.registerTask('css', ['less', 'autoprefixer', 'legacssy', 'cssmin', 'usebanner:css']);
   grunt.registerTask('js', ['concat:js', 'uglify', 'usebanner:js']);
   grunt.registerTask('test', ['jshint']);
-  grunt.registerTask('build', ['test', 'css', 'js', 'htmlmin', 'copy']);
+  grunt.registerTask('build', ['test', 'css', 'js', 'premailer', 'htmlmin', 'copy']);
   grunt.registerTask('default', ['build']);
 
 };
