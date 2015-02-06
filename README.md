@@ -1,8 +1,17 @@
 # CFPB Email Templates
 
-Templates for CFPB emails, featuring responsive design.
+All our interactions with the public (anyone outside the bureau,
+including other federal or state agencies, institutions, and consummers)
+should be easy to understand and use regardless of the communication channel
+(website, printed pamphlets, reports, our consumer response hotline, and email).
+Currently our email communications have not been given the same consideration
+as some of our other channels of communication.     
 
-![Screenshot](screenshot.png)
+This project aims to provide a technical framework, templates,
+and a content strategy for external communication via email.     
+  
+Content guidelines will be hosted in the
+[Design Manual](https://cfpb.github.io/design-manual/).
 
 
 ## Dependencies
