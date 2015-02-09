@@ -338,10 +338,10 @@ module.exports = function(grunt) {
             email: 'scott.cranfill@cfpb.gov',
             name: 'Scott Cranfill'
           },
-          // {
-          //   email: 'scott.cranfill@gmail.com',
-          //   name: 'Scott Cranfill'
-          // },
+          {
+            email: 'scott.cranfill@gmail.com',
+            name: 'Scott Cranfill'
+          },
         ]
       },
 
