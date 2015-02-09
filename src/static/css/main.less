@@ -1,0 +1,158 @@
+/* ==========================================================================
+   cfpb-email-templates
+   ========================================================================== */
+
+// This is your project's main Less file.
+// Project-specific Less rules go after the imports.
+
+// Import Normalize, a Capital Framework dependency and an all-around best practice.
+@import (less) "../../vendor/normalize-css/normalize.css";
+@import (less) "../../vendor/normalize-legacy-addon/normalize-legacy-addon.css";
+
+// Import the combined Capital Framework component file that was created by `grunt compile-cf`.
+@import (less) "capital-framework.less";
+
+// Import the brand color palette.
+@import (less) "brand-palette.less";
+
+// Override the Capital Framework theme variables with colors from the brand color palette.
+@import (less) "cf-theme-overrides.less";
+
+
+/* ==========================================================================
+   Email template styles begin here
+   ========================================================================== */
+
+body,
+.body {
+    margin-bottom: 0;
+    background: @white;
+}
+
+table {
+    width: 100%;
+    font-family: "Avenir Next", Arial, sans-serif;
+}
+
+th,
+td {
+    padding: 0;
+    background: transparent;
+}
+tbody > tr:nth-child(2n+1) {
+    > th,
+    > td {
+        background: transparent;
+    }
+}
+
+.wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background: @white;
+
+    th,
+    td {
+        padding: 30px 15px;
+    }
+}
+
+td.header,
+td.footer {
+    padding: 0;
+    border-bottom: 1px solid @gray-50;
+
+    table,
+    p {
+        margin-bottom: 0;
+    }
+
+    img {
+        display: block;
+    }
+}
+
+.logo {
+    width: 267px;
+}
+// .logo__header {
+//     text-align: right;
+// }
+
+.intro {
+    width: 333px;
+}
+
+.main a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+tr.footer-row {
+    background: @gray-10;
+}
+td.footer {
+    border-top: 3px solid @green;
+    border-bottom: none;
+}
+.footer td {
+    padding-right: 30px;
+    padding-left: 30px;
+    font-size: 0.75em;
+}
+.address {
+    width: 283px;
+
+    td {
+        padding-top: 40px; // Align baseline with bureau name
+    }
+}
+a[href^="tel"] {
+    border-bottom: none;
+    color: @black;
+    font-weight: 500;
+}
+
+.respond-to-max(480px, {
+    .logo,
+    .intro,
+    .address {
+        display: block !important;
+        width: 100% !important;
+    }
+    .logo img {
+        height: 40px;
+    }
+    .logo__header {
+        td {
+            width: 100% !important;
+            padding: 10px;
+            border-bottom: 1px solid @gray-20;
+        }
+        img {
+            margin: 0 auto;
+        }
+    }
+    .footer td {
+        padding-right: 15px;
+        padding-left: 15px;
+        font-size: 1em;
+    }
+    .logo__footer td {
+        padding-bottom: 15px;
+    }
+    .address td {
+        padding-top: 0;
+    }
+});
+
+// Fixes centering of logo on single column screens.
+// Single-celled tables do not correctly get 100% width, so we add an empty cell
+// with width of 1px to trick it.
+td.single-cell-fix {
+    padding: 0;
+
+    .respond-to-max(480px, {
+        padding: 0 0 0 1px;
+    });
+}
