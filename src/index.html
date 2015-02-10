@@ -37,10 +37,11 @@ body {
    ========================================================================== */
 /**
  * Remove the gray background color from active links in IE 10.
+ * TURNED OFF FOR BB7 EMAIL
  */
-a {
+/*a {
   background-color: transparent;
-}
+}*/
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
@@ -1029,7 +1030,7 @@ input.btn::-moz-focus-inner {
   font-style: normal;
   font-weight: bold;
 }
-@media only all and (max-width: 37.4375em) {
+@media only screen and (max-width: 480px) {
   .pull-quote_body {
     margin-top: 0;
     margin-bottom: 1.16666667em;
@@ -1074,7 +1075,7 @@ input.btn::-moz-focus-inner {
   font-style: normal;
   font-weight: bold;
 }
-@media only all and (max-width: 37.4375em) {
+@media only screen and (max-width: 480px) {
   .pull-quote__large .pull-quote_body {
     font-family: "Avenir Next", Arial, sans-serif;
     font-style: normal;
@@ -1097,7 +1098,7 @@ input.btn::-moz-focus-inner {
     font-weight: bold;
   }
 }
-@media only all and (max-width: 37.4375em) and only all and (max-width: 37.4375em) {
+@media only screen and (max-width: 480px) {
   .pull-quote__large .pull-quote_body {
     margin-top: 0;
     margin-bottom: 1.16666667em;
@@ -1486,6 +1487,7 @@ a.category-slug.active {
     - cf-typography
 */
 .jump-link {
+  display: block;
   font-family: "Avenir Next", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -1504,15 +1506,15 @@ a.category-slug.active {
 .jump-link__large {
   font-size: 1.125em;
 }
-@media only all and (max-width: 37.4375em) {
+@media only screen and (max-width: 640px) and (orientation: landscape),
+       only screen and (max-width: 480px) {
   .jump-link {
     box-sizing: border-box;
-    display: block;
     padding: 0.625em 1.25em 0.625em 0;
     border: dotted #ffffff;
     border-width: 1px 0;
     margin-right: 0;
-    width: 100%;
+    /*width: 100%; -- commended out to fix width on BB7 */ 
     text-align: left;
   }
   .jump-link_text {
@@ -2078,7 +2080,7 @@ a.category-slug.active {
   tags:
     - cf-core
 */
-@media only all and (max-width: 37.4375em) {
+@media only screen and (max-width: 480px) {
   .u-hide-on-mobile {
     display: none;
   }
@@ -2086,7 +2088,7 @@ a.category-slug.active {
 .u-show-on-mobile {
   display: none;
 }
-@media only all and (max-width: 37.4375em) {
+@media only screen and (max-width: 480px) {
   .u-show-on-mobile {
     display: block;
   }
@@ -2245,7 +2247,7 @@ h1,
   font-size: 2.125em;
   line-height: 1.29411765;
 }
-@media only all and (max-width: 37.4375em) {
+@media only screen and (max-width: 480px) {
   h1,
   .h1 {
     font-family: "Avenir Next", Arial, sans-serif;
@@ -2273,7 +2275,7 @@ h1,
     font-weight: bold;
   }
 }
-@media only all and (max-width: 37.4375em) and only all and (max-width: 37.4375em) {
+@media only screen and (max-width: 480px) {
   h1,
   .h1 {
     font-family: "Avenir Next", Arial, sans-serif;
@@ -2301,7 +2303,7 @@ h1,
     font-weight: bold;
   }
 }
-@media only all and (max-width: 37.4375em) and only all and (max-width: 37.4375em) and only all and (max-width: 37.4375em) {
+@media only screen and (max-width: 480px) {
   h1,
   .h1 {
     margin-top: 0;
@@ -2320,7 +2322,7 @@ h2,
   font-size: 1.625em;
   line-height: 1.26923077;
 }
-@media only all and (max-width: 37.4375em) {
+@media only screen and (max-width: 480px) {
   h2,
   .h2 {
     font-family: "Avenir Next", Arial, sans-serif;
@@ -2348,7 +2350,7 @@ h2,
     font-weight: bold;
   }
 }
-@media only all and (max-width: 37.4375em) and only all and (max-width: 37.4375em) {
+@media only screen and (max-width: 480px) {
   h2,
   .h2 {
     margin-top: 0;
@@ -2367,7 +2369,7 @@ h3,
   font-size: 1.375em;
   line-height: 1.27272727;
 }
-@media only all and (max-width: 37.4375em) {
+@media only screen and (max-width: 480px) {
   h3,
   .h3 {
     margin-top: 0;
@@ -2650,6 +2652,15 @@ body,
   background: #ffffff;
   font-size: 16px;
 }
+a,
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+  border: none;
+  text-decoration: underline;
+}
 table {
   width: 100%;
   font-family: "Avenir Next", Arial, sans-serif;
@@ -2662,6 +2673,7 @@ tbody > tr:nth-child(2n+1) > th,
 tbody > tr:nth-child(2n+1) > td {
 }
 .wrapper {
+  width: 600px;
   max-width: 600px;
   margin: 0 auto;
   background: #ffffff;
@@ -2669,6 +2681,7 @@ tbody > tr:nth-child(2n+1) > td {
 .wrapper th,
 .wrapper td {
   padding: 30px 15px;
+  text-align: left !important;
 }
 td.header,
 td.footer {
@@ -2686,17 +2699,27 @@ td.footer img {
   display: block;
 }
 .logo {
-  width: 267px;
+  width: 268px;
 }
 .logo__footer {
   width: 297px;
 }
 .intro {
-  width: 333px;
+  width: 332px;
 }
 .main a {
+  word-break: break-all;
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+.link-header {
+  margin-bottom: 0;
+}
+.main ul {
+  padding-left: 0;
+}
+.main li {
+  margin-left: 2em; /* doing this via margin on li for Outlook */
 }
 tr.footer-row {
   background: #f1f2f2;
@@ -2711,19 +2734,39 @@ td.footer {
   font-size: 0.75em;
 }
 .address {
-  width: 283px;
+  width: 220px;
 }
 .address td {
   padding-top: 40px;
 }
-a[href^="tel"] {
-  border-bottom: none;
+a[href^="tel"],
+.footer-url a {
   color: #101820;
   font-weight: 500;
+  text-decoration: none;
 }
-@media only screen and (max-width: 601px) and (orientation: portrait) {
-  .header {
-    background: #ffcccc;
+.footer-url {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+td.single-cell-fix {
+  padding: 0 0 0 1px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    width: auto !important;
+  }
+}
+
+@media only screen and (max-width: 640px) and (orientation: landscape),
+       only screen and (max-width: 480px) {
+  html,
+  body {
+    /* Get rid of extra margin in iOS mail */
+    margin: 0;
+    padding: 0;
   }
   .logo,
   .intro,
@@ -2736,28 +2779,80 @@ a[href^="tel"] {
   }
   .logo__header td {
     width: 100% !important;
-    padding: 10px;
+    padding: 10px !important;
     border-bottom: 1px solid #e3e4e5;
   }
   .logo__header img {
     margin: 0 auto;
   }
+  .link-header {
+    margin-bottom: 10px !important;
+  }
+  a.jump-link {
+    border-top: 1px dotted #0072ce !important;
+    border-bottom: 1px dotted #0072ce !important;
+    text-decoration: none !important;
+  }
+  .main li {
+    margin-left: 1.5em; /* doesn't need as much margin as Outlook */
+  }
   .footer td {
-    padding-right: 15px;
-    padding-left: 15px;
-    font-size: 1em;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    font-size: 1em !important;
   }
   .logo__footer td {
-    padding-bottom: 15px;
+    padding-bottom: 15px !important;
   }
   .address td {
-    padding-top: 0;
+    padding-top: 0 !important;
   }
 }
-td.single-cell-fix {
-  padding: 0 0 0 1px;
+
+/* Media query targeting only BlackBerry Bold 9900 devices */
+@media only screen and (max-width: 640px) and (orientation: landscape) {
+  /* Attempted fix for lack of font scaling on BB. Not working.
+  * td {
+    -webkit-text-size-adjust: 100% !important;
+  } */
+  /* Hacky workaround: Explicitly double all font sizes. */
+  /* Note: Anything larger than the h3 here will be too large to be helpful
+     on the BlackBerry's display. Should revisit if we want a more useful
+     hierarchy. */
+  p,
+  li {
+    font-size: 28px !important;
+  }
+  h1 {
+    font-size: 60px !important;
+  }
+  h2 {
+    font-size: 44px !important;
+  }
+  h3 {
+    font-size: 38px !important;
+  }
+  h4 {
+    font-size: 34px !important;
+  }
+  h5 {
+    font-size: 24px !important;
+  }
+  .logo img {
+    height: 75px;
+  }
 }
   </style> <!-- end of data-style-block="email" -->
+
+<!--[if gte mso 12]>
+    <style type="text/css">
+    /* Hacks for Outlook */
+    .intro {
+      width: 300px !important;
+    }
+    </style>
+<![endif]-->
+
 </head>
 
 <body>
@@ -2771,11 +2866,11 @@ td.single-cell-fix {
             <tr>
               <td class="header">
                 <table class="logo logo__header"
-                       align="right" border="0" cellpadding="0" cellspacing="0" width="267">
+                       align="right" border="0" cellpadding="0" cellspacing="0" width="268">
                   <tr>
                     <td align="center" valign="middle">
                       <center>
-                        <img src="http://cfpb.github.io/cfgov-refresh/static/img/logo_sm-exec.png"
+                        <img src="http://cfpb.github.io/design-manual/assets/img/logo_sm-exec_transparent.png"
                              alt=""
                              align="center"
                              height="50" />
@@ -2784,7 +2879,7 @@ td.single-cell-fix {
                     <td class="single-cell-fix"></td>
                   </tr>
                 </table>
-                <table class="intro" align="left" border="0" cellpadding="0" cellspacing="0" width="323">
+                <table class="intro" align="left" border="0" cellpadding="0" cellspacing="0" width="332">
                   <tr>
                     <td valign="middle">
                       <p>Thank you for contacting the Consumer Financial Protection Bureau (CFPB).</p>
@@ -2796,6 +2891,9 @@ td.single-cell-fix {
 
             <tr>
               <td class="main">
+                <p class="link-header">Please visit the following link to activate your account:</p>
+                <p><a class="jump-link" href="#">http://www.consumerfinance.gov/</a></p>
+                
                 <p>
                   Our Office of Consumer Response has received your submission and will
                   review it as soon as possible to determine if it involves a Federal
@@ -2820,23 +2918,47 @@ td.single-cell-fix {
                     again and let you know.
                   </li>
                 </ul>
+                <h4>Helpful links</h4>
+                <p class="link-header">
+                  Upload files:
+                </p>
+                <p><a class="jump-link" href="https://extranet.cfpb.gov/">https://extranet.cfpb.gov/</a></p>
+                <p class="link-header">
+                  To add, edit, or remove delivery methods for receiving one-time passcodes:
+                </p>
+                <p><a class="jump-link" href="https://login.extranet.cfpb.gov/updateprofile">
+                  https://login.extranet.cfpb.gov/updateprofile
+                </a></p>
+                <p class="link-header">
+                  Change your password:
+                </p>
+                <p><a class="jump-link" href="https://login.extranet.cfpb.gov/changepassword">
+                  https://login.extranet.cfpb.gov/changepassword
+                </a></p>
                 <p>
                   Regardless, your submission will help us understand the marketplace
                   better and help us to protect consumers like you.
                 </p>
-                <p>
+                <h4>Activation includes the following steps:</h4>
+                <h5>STEP 1</h5>
+                <p>Enter your email address as the username</p>
+                <h5>STEP 2</h5>
+                <p>Enter a one-time passcode that you will receive via email</p>
+                <h5>STEP 3</h5>
+                <p>Create a new password</p>
+                <p class="link-header">
                   You can set up an account to check the status of your submission at any
-                  time at
-                  <a href="https://help.consumerfinance.gov/app/account/complaints/list/">
-                    https://help.consumerfinance.gov/app/account/complaints/list/
-                  </a>
+                  time at:
                 </p>
+                <p><a class="jump-link" href="https://help.consumerfinance.gov/app/account/complaints/list/">
+                  https://help.consumerfinance.gov/app/account/complaints/list/
+                </a></p>
+                
                 <p>
                   Thank you,
                 </p>
                 <p>
                   Consumer Financial Protection Bureau<br />
-                  <a href="http://www.consumerfinance.gov/">consumerfinance.gov</a><br />
                   <a href="tel:+18554112372">(855) 411-CFPB (2372)</a>
                 </p>
               </td><!-- /.main -->
@@ -2852,7 +2974,7 @@ td.single-cell-fix {
                        width="297">
                   <tr>
                     <td valign="middle">
-                      <img src="http://cfpb.github.io/cfgov-refresh/static/img/logo_sm-exec.png"
+                      <img src="http://cfpb.github.io/design-manual/assets/img/logo_sm-exec_transparent.png"
                            alt="Consumer Financial Protection Bureau"
                            height="50" />
                     </td>
@@ -2863,11 +2985,14 @@ td.single-cell-fix {
                        border="0"
                        cellpadding="0"
                        cellspacing="0"
-                       width="323">
+                       width="220">
                   <tr>
                     <td valign="middle">
                       1700 G Street NW<br />
                       Washington, D.C. 20552
+                      <p class="footer-url">
+                        <a href="http://www.consumerfinance.gov/">consumerfinance.gov</a>
+                      </p>
                     </td>
                   </tr>
                 </table>
