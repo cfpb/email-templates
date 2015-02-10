@@ -2673,6 +2673,7 @@ tbody > tr:nth-child(2n+1) > th,
 tbody > tr:nth-child(2n+1) > td {
 }
 .wrapper {
+  width: 600px;
   max-width: 600px;
   margin: 0 auto;
   background: #ffffff;
@@ -2697,18 +2698,21 @@ td.footer img {
   display: block;
 }
 .logo {
-  width: 267px;
+  width: 268px;
 }
 .logo__footer {
   width: 297px;
 }
 .intro {
-  width: 333px;
+  width: 332px;
 }
 .main a {
   word-break: break-all;
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+.link-header {
+  margin-bottom: 0;
 }
 .main ul {
   padding-left: 0;
@@ -2729,18 +2733,30 @@ td.footer {
   font-size: 0.75em;
 }
 .address {
-  width: 283px;
+  width: 200px;
 }
 .address td {
   padding-top: 40px;
 }
-a[href^="tel"] {
+a[href^="tel"],
+.footer-url a {
   color: #101820;
   font-weight: 500;
   text-decoration: none;
 }
+.footer-url {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
 td.single-cell-fix {
   padding: 0 0 0 1px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    width: auto !important;
+  }
 }
 
 @media only screen and (max-width: 640px) and (orientation: landscape),
@@ -2768,6 +2784,17 @@ td.single-cell-fix {
   .logo__header img {
     margin: 0 auto;
   }
+  .link-header {
+    margin-bottom: 10px !important;
+  }
+  a.jump-link {
+    border-top: 1px dotted #0072ce !important;
+    border-bottom: 1px dotted #0072ce !important;
+    text-decoration: none !important;
+  }
+  .main li {
+    margin-left: 1.5em; /* doesn't need as much margin as Outlook */
+  }
   .footer td {
     padding-right: 15px !important;
     padding-left: 15px !important;
@@ -2778,14 +2805,6 @@ td.single-cell-fix {
   }
   .address td {
     padding-top: 0 !important;
-  }
-  a.jump-link {
-    border-top: 1px dotted #0072ce !important;
-    border-bottom: 1px dotted #0072ce !important;
-    text-decoration: none !important;
-  }
-  .main li {
-    margin-left: 1.5em; /* doesn't need as much margin as Outlook */
   }
 }
 
@@ -2801,28 +2820,38 @@ td.single-cell-fix {
      hierarchy. */
   p,
   li {
-    font-size: 32px !important;
+    font-size: 28px !important;
   }
   h1 {
-    font-size: 68px !important;
+    font-size: 60px !important;
   }
   h2 {
-    font-size: 52px !important;
-  }
-  h3 {
     font-size: 44px !important;
   }
+  h3 {
+    font-size: 38px !important;
+  }
   h4 {
-    font-size: 36px !important;
+    font-size: 34px !important;
   }
   h5 {
-    font-size: 28px !important;
+    font-size: 24px !important;
   }
   .logo img {
     height: 75px;
   }
 }
   </style> <!-- end of data-style-block="email" -->
+
+<!--[if gte mso 12]>
+    <style type="text/css">
+    /* Hacks for Outlook */
+    .intro {
+      width: 300px !important;
+    }
+    </style>
+<![endif]-->
+
 </head>
 
 <body>
@@ -2836,11 +2865,11 @@ td.single-cell-fix {
             <tr>
               <td class="header">
                 <table class="logo logo__header"
-                       align="right" border="0" cellpadding="0" cellspacing="0" width="267">
+                       align="right" border="0" cellpadding="0" cellspacing="0" width="268">
                   <tr>
                     <td align="center" valign="middle">
                       <center>
-                        <img src="http://cfpb.github.io/cfgov-refresh/static/img/logo_sm-exec.png"
+                        <img src="http://cfpb.github.io/design-manual/assets/img/logo_sm-exec_transparent.png"
                              alt=""
                              align="center"
                              height="50" />
@@ -2849,7 +2878,7 @@ td.single-cell-fix {
                     <td class="single-cell-fix"></td>
                   </tr>
                 </table>
-                <table class="intro" align="left" border="0" cellpadding="0" cellspacing="0" width="323">
+                <table class="intro" align="left" border="0" cellpadding="0" cellspacing="0" width="332">
                   <tr>
                     <td valign="middle">
                       <p>Thank you for contacting the Consumer Financial Protection Bureau (CFPB).</p>
@@ -2861,7 +2890,7 @@ td.single-cell-fix {
 
             <tr>
               <td class="main">
-                <p>Please visit the following link to activate your account:</p>
+                <p class="link-header">Please visit the following link to activate your account:</p>
                 <p><a class="jump-link" href="#">http://www.consumerfinance.gov/</a></p>
                 
                 <p>
@@ -2889,22 +2918,22 @@ td.single-cell-fix {
                   </li>
                 </ul>
                 <h4>Helpful links</h4>
-                <p>
-                  Upload files:<br />
-                  <a href="https://extranet.cfpb.gov/">https://extranet.cfpb.gov/</a>
+                <p class="link-header">
+                  Upload files:
                 </p>
-                <p>
-                  To add, edit, or remove delivery methods for receiving one-time passcodes:<br />
-                  <a href="https://login.extranet.cfpb.gov/updateprofile">
-                    https://login.extranet.cfpb.gov/updateprofile
-                  </a>
+                <p><a class="jump-link" href="https://extranet.cfpb.gov/">https://extranet.cfpb.gov/</a></p>
+                <p class="link-header">
+                  To add, edit, or remove delivery methods for receiving one-time passcodes:
                 </p>
-                <p>
-                  Change your password:<br />
-                  <a href="https://login.extranet.cfpb.gov/changepassword">
-                    https://login.extranet.cfpb.gov/changepassword
-                  </a>
+                <p><a class="jump-link" href="https://login.extranet.cfpb.gov/updateprofile">
+                  https://login.extranet.cfpb.gov/updateprofile
+                </a></p>
+                <p class="link-header">
+                  Change your password:
                 </p>
+                <p><a class="jump-link" href="https://login.extranet.cfpb.gov/changepassword">
+                  https://login.extranet.cfpb.gov/changepassword
+                </a></p>
                 <p>
                   Regardless, your submission will help us understand the marketplace
                   better and help us to protect consumers like you.
@@ -2916,7 +2945,7 @@ td.single-cell-fix {
                 <p>Enter a one-time passcode that you will receive via email</p>
                 <h5>STEP 3</h5>
                 <p>Create a new password</p>
-                <p>
+                <p class="link-header">
                   You can set up an account to check the status of your submission at any
                   time at:
                 </p>
@@ -2944,7 +2973,7 @@ td.single-cell-fix {
                        width="297">
                   <tr>
                     <td valign="middle">
-                      <img src="http://cfpb.github.io/cfgov-refresh/static/img/logo_sm-exec.png"
+                      <img src="http://cfpb.github.io/design-manual/assets/img/logo_sm-exec_transparent.png"
                            alt="Consumer Financial Protection Bureau"
                            height="50" />
                     </td>
@@ -2955,12 +2984,14 @@ td.single-cell-fix {
                        border="0"
                        cellpadding="0"
                        cellspacing="0"
-                       width="323">
+                       width="200">
                   <tr>
                     <td valign="middle">
                       1700 G Street NW<br />
-                      Washington, D.C. 20552<br />
-                      <a href="http://www.consumerfinance.gov/">consumerfinance.gov</a>
+                      Washington, D.C. 20552
+                      <p class="footer-url">
+                        <a href="http://www.consumerfinance.gov/">consumerfinance.gov</a>
+                      </p>
                     </td>
                   </tr>
                 </table>
