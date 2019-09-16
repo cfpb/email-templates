@@ -1,0 +1,264 @@
+body,
+p,
+.gd_p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    line-height: 140%;
+    mso-line-height-rule: exactly;
+}
+ul,
+li {
+    line-height: 140%;
+    mso-line-height-rule: exactly;
+}
+body {
+
+}
+a {
+    color: #0563C1;
+    text-decoration: underline;
+    -ms-word-break: break-all;
+    /* Be VERY careful with this, breaks normal words wh_erever */
+    word-break: break-all;
+    /* Non standard for webkit */
+    word-break: break-word;
+    -webkit-hyphens: none;
+       -moz-hyphens: none;
+            hyphens: none;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+table table table {
+    table-layout: auto;
+}
+
+img {
+    height: auto;
+    border: none !important;
+}
+
+p,
+.gd_p,
+li {
+
+}
+
+h1,
+h2,
+h3,
+h1 span,
+h2 span,
+h3 span {
+    font-weight: bold;
+    line-height: 110%;
+    mso-line-height-rule: exactly;
+}
+
+#govd_container_volume-date,
+#govd_container_view-in-browser,
+#govd_container_main-header,
+#govd_container_call-to-action,
+#govd_container_main-body,
+#govd_container_main-footer {
+    min-height: 0 !important;
+}
+
+#main-body h1 a,
+#main-body h2 a,
+#main-body h3 a,
+#call-to-action h1 a,
+#call-to-action h2 a,
+#call-to-action h3 a {
+    text-decoration: none !important;
+    text-decoration: none;
+}
+
+#main-header table.gd_combo_table td.gd_combo_image_cell {
+    width: 290px !important;
+    width: 290px;
+    max-width: 270px;
+    text-align: left;
+    vertical-align: top;
+}
+#main-header table.gd_combo_table td.gd_combo_text_cell {
+    box-sizing: border-box;
+    width: 290px !important;
+    width: 290px;
+    padding: 0 0 10px 10px;
+    vertical-align: top;
+}
+#main-header table.gd_combo_table td.gd_combo_text_cell h1,
+#main-header table.gd_combo_table td.gd_combo_text_cell h1 span {
+
+}
+
+#main-body p,
+#main-footer p,
+#main-header p,
+#view-in-browser p,
+#volume-date p {
+  margin: 10px 0 10px 0 !important;
+}
+
+#main-footer div.govd_cb_fancy_block_image {
+  display: inline-block !important;
+}
+
+.gd_combo_spacer {
+    display: none !important;
+}
+
+.govd_template_image,
+.govd_template_image img {
+    height: auto !important;
+    max-height: auto !important;
+}
+
+
+/* brand new stuff added by Scott */
+body,
+div,
+td,
+p,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Avenir Next", Arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    line-height: 1.25;
+}
+h1 {
+    margin-bottom: 0.5882352941em; /* 20 / 34 */
+    font-size: 2.125em; /* 34 / 16 */
+    font-weight: normal;
+}
+h2 {
+    margin-bottom: 0.7692307692em; /* 20 / 26 */
+    font-size: 1.625em; /* 26 / 16 */
+    font-weight: normal;
+}
+h3,
+.gd-editable h2 {
+    margin-bottom: 0.9090909091em; /* 20 / 22 */
+    font-size: 1.375em; /* 22 / 16 */
+    font-weight: normal;
+}
+h4 {
+    margin-bottom: 0.9090909091em; /* 20 / 22 */
+    font-size: 1.125em; /* 18 / 16 */
+    font-weight: 500;
+}
+h5,
+#header-date h1,
+#header-date h2,
+#header-date h3,
+#header-date p,
+.gd-editable h3 {
+    margin-bottom: 1.4285714286em; /* 20/14 */
+    font-size: 0.875em; /* 14 / 16 */
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+h6 {
+    font-size: 0.75em; /* 12 / 16 */
+    font-weight: 600;
+    text-transform: uppercase;
+}
+p {
+    margin-bottom: 0.9375em; /* 15 / 16 */
+}
+.gd-editable p + h2 {
+    padding-top: 1.5909090909em; /* 35 / 22 */
+    border-top: 1px solid #5a5d61; /* Gray */
+    margin-top: 1.3636363636em; /* 30 / 22 */
+}
+.gd-editable p + h3 {
+    padding-top: 2.5em; /* 35 / 14 */
+    border-top: 1px solid #5a5d61; /* Gray */
+    margin-top: 2.5em; /* 35 / 14 */
+}
+p + h5 {
+    margin-top: 2.5em; /* 35 / 14 */
+}
+.innermost-cell {
+    padding-right: 0.9375em; /* 15 / 16 */
+    padding-left: 0.9375em; /* 15 / 16 */
+}
+.logo-container {
+    padding-top: 1.5625em; /* 25 / 16 */
+    padding-bottom: 1.5625em; /* 25 / 16 */
+    border-bottom: 5px solid #20aa3f; /* Green */
+}
+.header-container {
+    padding-top: 1.875em; /* 30 / 16 */
+    padding-bottom: 1.875em; /* 30 / 16 */
+    border-bottom: 1px solid #5a5d61; /* Gray */
+    background-color: #e2efd8; /* Green 20 */
+}
+#header-date h1,
+#header-date h2,
+#header-date h3,
+#header-date p {
+    margin-bottom: 0.3125em; /* 5 / 16 */
+}
+#main-header h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.body-container {
+    padding-top: 1.875em; /* 30 / 16 */
+    padding-bottom: 1.875em; /* 30 / 16 */
+}
+.body-footer-container {
+    padding-top: 1.875em; /* 30 / 16 */
+    padding-bottom: 1.875em; /* 30 / 16 */
+    border-top: 1px solid #5a5d61; /* Gray */
+    background-color: #f7f8f9; /* Gray 5 */
+}
+.footer-container {
+    padding-top: 1.875em; /* 30 / 16 */
+    padding-bottom: 1.875em; /* 30 / 16 */
+    border-top: 5px solid #20aa3f; /* Green */
+    background-color: #f7f8f9; /* Gray 5 */
+}
+.social-media-heading {
+    margin-top: 2.1428571429em; /* 30 / 14 */
+}
+.social-media-link {
+    display: inline-block;
+    margin-right: 0.375em; /* 6 / 16 –- plus 4px natural inline space = 10px */
+}
+.official-email {
+    margin-top: 0.9375em; /* 15 / 16 */
+    background-color: #f7f8f9; /* Gray 5 -- attempting to get rid of weird white BG in the padding and margin of this element */
+    line-height: 1.375;
+}
+.official-email img {
+   display: inline-block;
+   margin-right: 0.375em; /* 6 / 16 –- plus 4px natural inline space = 10px */
+}
+hr {
+    margin: 0.9375em 0; /* 15 / 16 */
+    border-color: #5a5d61; /* Gray */
+    border-style: solid;
+    border-width: 1px 0 0 0;
+}
